@@ -1,0 +1,60 @@
+<!-- pages/coupon/coupon.wxml -->
+<view class='Coupon'>
+  <view class='Coupon-Info'>
+    <text>可用优惠券</text>
+    <view class='coupon-draw'>
+      <view class='coupon-list' wx:for="{{draw}}" wx:key='draw' wx:for-item='draw' data-index="{{index}}" bindtap='SelectCoupon'>
+        <form>
+          <rich-text class='coupon-list-l'>
+            <label>{{draw.itype==1?'部分品类券':'全品类通用券'}}</label>
+            <label class='valid'>有效期：{{draw.valid}}</label>
+            <label class="{{draw.model?'up':'down'}}" data-index="{{index}}" catchtap='drawshow'>
+              更多使用规则
+            </label>
+          </rich-text>
+          <rich-text class='coupon-list-r'>
+            <label>
+              <text class='value'>{{draw.value}}</text>
+              {{draw.style==0?'元':'折'}}
+            </label>
+            <label>满{{draw.limit}}元可用</label>
+          </rich-text>
+          <rich-text class="coupon-list-b {{draw.model?'':'hidden'}}">
+            <label wx:if="{{draw.itype==0}}">1.全品类可用</label>
+            <label wx:if="{{draw.itype==1}}">1.以下物品可用：{{draw.iname}}</label>
+            <label wx:if="{{draw.stype==1}}">{{draw.itype==1?2:1}}.以下店铺可用：{{draw.sname}}</label>
+          </rich-text>
+        </form>
+      </view>
+    </view>
+    <text>不可用优惠券</text>
+    <view class='coupon-lost'>
+      <view class='coupon-list' wx:for="{{lost}}" wx:key='lost' wx:for-item='lost'>
+        <form>
+          <rich-text class='coupon-list-l'>
+            <label>{{lost.itype==1?'部分品类券':'全品类通用券'}}</label>
+            <label class='valid'>有效期：{{lost.valid}}</label>
+            <label class="{{lost.model?'up':'down'}}" data-index="{{index}}" catchtap='lostshow'>
+              更多使用规则
+            </label>
+          </rich-text>
+          <rich-text class='coupon-list-r'>
+            <label>
+              <text class='value'>{{lost.value}}</text>
+              {{lost.style==0?'元':'折'}}
+            </label>
+            <label>满{{lost.limit}}元可用</label>
+          </rich-text>
+          <rich-text class="coupon-list-b {{lost.model?'':'hidden'}}">
+            <label wx:if="{{lost.itype==0}}">1.全品类可用</label>
+            <label wx:if="{{lost.itype==1}}">1.以下物品可用：{{lost.iname}}</label>
+            <label wx:if="{{lost.stype==1}}">{{lost.itype==1?2:1}}.以下店铺可用：{{lost.sname}}</label>
+          </rich-text>
+        </form>
+      </view>
+    </view>
+  </view>
+  <view class='Coupon-Pass'>
+    <button bindtap='NoCoupon'>不使用优惠券</button>
+  </view>
+</view>

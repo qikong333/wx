@@ -1,0 +1,55 @@
+<view class="box1">
+    <view class="boxTop">
+        <image class="bc" bindtap="back" src='../../images/back.png'></image>
+        个人中心
+    </view>
+    <image class="bg" style="height:400rpx" src='../../images/190212/takeaway/top@2x.png'></image>
+    <view class="boxCont">
+        <image class="clientPic" src="{{clientImg}}"></image>
+        <text class="clientName">{{clientName}}</text>
+    </view>
+</view>
+<view class="box2">
+    <view class="fd">
+        <view class="list1">
+            <text class="LT1">我的订单</text>
+            <text class="LT2" data-index="0" bindtap="toOrder">全部订单</text>
+            <view class="LT3">
+                <image class="img3" src="../../images/btn_arrow@2x.png" />
+            </view>
+        </view>
+        <view class="list2">
+            <view iew class="LL1" data-index="1" bindtap="toOrder">
+                <image class="LLimg" src="../../images/iconpayment@2x.png" />
+                <text class="LLtext">待付款</text>
+            </view>
+            <view class="LL1" data-index="2" bindtap="toOrder">
+                <image class="LLimg" src="../../images/icongoods@2x.png" />
+                <text class="LLtext">代收货</text>
+            </view>
+            <view class="LL1" data-index="3" bindtap="toOrder">
+                <image class="LLimg" src="../../images/iconfinish@2x.png" />
+                <text class="LLtext">已完成</text>
+            </view>
+            <view class="LL1" data-index="4" bindtap="toOrder">
+                <image class="LLimg" src="../../images/iconreturn@2x.png" />
+                <text class="LLtext">退/换货</text>
+            </view>
+        </view>
+    </view>
+</view>
+<view class="box3">
+    <view class="list" bindtap="toCoupen">
+        <image class="img1" src="../../images/icon_my_coupons@2x.png" />
+        <text class=" ">我的优惠券</text>
+        <image class="img3" src="../../images/btn_arrow@2x.png" />
+    </view>
+    <view class="list" bindtap="help">
+        <image class="img2" src="../../images/customer.png" />
+        <text class="">客服与帮助</text>
+        <image class="img3" src="../../images/btn_arrow@2x.png" />
+    </view>
+</view>
+<view class="box4">
+    <image class="imgb" src="../../images/mainb.png" />
+</view>

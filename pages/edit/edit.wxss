@@ -1,0 +1,102 @@
+/* pages/edit/edit.wxss */
+
+.Edit-Info {
+  padding-left: 30rpx;
+  overflow: hidden;
+}
+
+.Edit-Info .edit-list {
+  width: 720rpx;
+  height: 100rpx;
+  overflow: hidden;
+  border-bottom: #eee 2rpx solid;
+}
+
+.Edit-Info .edit-tab {
+  width: 150rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+  font-size: 30rpx;
+  font-weight: bold;
+  float: left;
+}
+
+.Edit-Info rich-text {
+  width: 570rpx;
+  height: 60rpx;
+  padding: 20rpx 0;
+  font-size: 30rpx;
+  position: relative;
+  float: right;
+}
+
+.Edit-Info rich-text.select:after {
+  content: '';
+  width: 20rpx;
+  height: 20rpx;
+  border-top: 4rpx solid #999;
+  border-right: 4rpx solid #999;
+  position: absolute;
+  right: 40rpx;
+  top: 40rpx;
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+}
+
+.Edit-Info rich-text view {
+  width: 500rpx;
+  line-height: 60rpx;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  position: relative;
+}
+
+.Edit-Info rich-text input {
+  width: 500rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+}
+
+/* .Edit-Info rich-text label {
+  width: 70rpx;
+  height: 40rpx;
+  position: absolute;
+  right: 30rpx;
+  top: 50%;
+  z-index: 2;
+  transform: translateY(-50%);
+  text-align: right;
+}
+
+.Edit-Info rich-text label icon{
+  width: 70rpx;
+} */
+
+
+.Edit-Info rich-text .edit-opt {
+  display: inline-block;
+  width: 100rpx;
+  height: 56rpx;
+  line-height: 56rpx;
+  text-align: center;
+  margin-right: 30rpx;
+  background: #fff;
+  font-size: 26rpx;
+  border: #e6e6e6 2rpx solid;
+  border-radius: 50rpx;
+}
+
+.Edit-Info rich-text .edit-opt.active {
+  color: #fff;
+  background: #29aff6;
+  border: #29aff6 2rpx solid;
+}
+
+.Edit-Info rich-text .picker {
+  line-height: 60rpx;
+}
+
+.Edit-Save {
+  padding: 50rpx 30rpx;
+}

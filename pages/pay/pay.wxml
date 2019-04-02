@@ -1,0 +1,61 @@
+<!-- pages/pay/pay.wxml -->
+<view class='Pay'>
+  <view class='Pay-Detail'>
+    <text>确认付款(元)</text>
+    <view>{{Sum}}</view>
+    <rich-text>剩余支付时间 {{clock}}</rich-text>
+  </view>
+  <!-- 直接打开便利店时显示 -->
+  <!-- <view wx:if='{{!hasCard}}' class='Pay-Method1'>
+    <text>选择支付方式</text>
+    <view class='method-list1'>
+      <image src='{{Method[0].image}}'></image>
+      <text>{{Method[0].name}}</text>
+      <icon type='success_no_circle' color='#29aff6'></icon>
+    </view>
+  </view> -->
+  <!-- 从卡盟小程序进入时显示 -->
+  <!-- <view wx:else class='Pay-Method'> -->
+  <view class='Pay-Method'>
+    <text>选择支付方式</text>
+    <scroll-view class='method' scroll-y>
+      <block wx:for="{{Method}}" wx:for-item="method" wx:for-index="index" wx:key="id">
+        <view class='method-list' catchtap="{{method.items ? 'catchShow':'catchSelect'}}" data-index='{{index}}'>
+          <image class='start' src='{{method.image}}' mode='widthFix'></image>
+          <text>{{method.name}}</text>
+          <icon wx:if='{{!method.items && method.check}}' type='success_no_circle' color='#29aff6' size='30rpx'></icon>
+          <image class='end' wx:if='{{method.items}}' src="{{method.show ? '../../images/arrow_up.png':'../../images/arrow_down.png'}}" mode='widthFix'></image>
+        </view>
+        <block wx:if='{{method.show}}' wx:for='{{method.items}}' wx:for-item="item" wx:for-index="idx" wx:key='ids'>
+          <view class="method-item {{item.check ? 'active':'gray'}}" catchtap='catchSelect' data-index='{{index}}' data-idx='{{idx}}'>
+            <text class="item_name">{{item.name}}</text>
+            <view class="item_balance">
+              (可用{{item.type}}
+              <text>{{item.balance}}</text>
+              ）
+            </view>
+            <icon wx:if='{{item.check}}' type='success_no_circle' color='#29aff6' size='30rpx'></icon>
+          </view>
+        </block>
+      </block>
+    </scroll-view>
+  </view>
+  <!-- 输入支付密码弹窗 -->
+  <view wx:if='{{isMPay}}' class='pay_dark'>
+    <view class='pay_password'>
+      <icon type='clear' size='50rpx' bindtap='bindCloseIpt'></icon>
+      <view class='pay_title'>输入安全密码</view>
+      <form class='pay_form' bindsubmit="formSubmit">
+        <view class='pay_input_content'>
+          <block wx:for="{{Length}}" wx:key="item">
+            <input class='pay_iptbox' value="{{Value.length >= index + 1 ? Value[index] : ''}}" disabled password='{{ispassword}}' catchtap='Tap'></input>
+          </block>
+        </view>
+        <input class='pay_ipt' name="password" type='number' password="{{true}}" maxlength="{{Length}}" focus="{{isFocus}}" bindinput="bindInput" value='{{Value}}'></input>
+      </form>
+    </view>
+  </view>
+  <view class='Pay-Submit'>
+    <button class='button-b' disabled='{{disabled}}' bindtap='getpay'>确认支付</button>
+  </view>
+</view>

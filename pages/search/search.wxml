@@ -1,0 +1,78 @@
+<!--pages/search/search.wxml-->
+<view class='Search'>
+  <!-- 搜索框 -->
+  <view class='Search-Option'>
+    <input class='search-box' placeholder='请输入商品名称' focus='{{focus}}' confirm-type='search' bindconfirm="Search" value='{{value}}'></input>
+    <label class='search'>
+      <icon type="search" size="20"></icon>
+    </label>
+    <!-- <label class='clear' catchtap='clear'>
+      <icon type="clear" size="20"></icon>
+    </label> -->
+  </view>
+  <!-- 大家都在搜——标签 -->
+  <view wx:if="{{!search}}" class='Search-Record'>
+    <text>大家都在搜</text>
+    <block wx:for="{{record}}" wx:key="id">
+      <view class="search-his" bindtap="Search" data-index="{{index}}" data-name='{{item}}'>{{item}}</view>
+    </block>
+  </view>
+  <!-- 搜索到的商品列表 -->
+  <scroll-view wx:else scroll-y='true' class='Search-Info'>
+    <block wx:if="{{result}}">
+      <view class="search-con" wx:for="{{list}}" wx:for-item="con" wx:key="id" data-index="{{index}}" catchtap='PopOpen'>
+        <image wx:if="{{con.stock==0}}" class='con-empty' src='../../images/empty.png'></image>
+        <image class='con-image' src='{{con.image}}'></image>
+        <text class='con-name'>{{con.name}}</text>
+        <text class='con-size'>{{con.size}}</text>
+        <text class='con-price'>{{con.price}}元</text>
+        <view class='con-num'>
+          <image class="sub {{con.num>0? '':'hidden'}}" src='../../images/icon-sub.png' data-index="{{index}}" catchtap="catchSubNum"></image>
+          <text class="num {{con.num>0? '':'hidden'}}">{{con.num}}</text>
+          <image class='add' src='../../images/icon-add.png' data-index="{{index}}" catchtap="catchAddNum"></image>
+        </view>
+      </view>
+    </block>
+    <view wx:if="{{!result}}" class='search-none'>
+      <image src='../../images/no-find.png'></image>
+      <text>暂时没有找到你要的商品~</text>
+    </view>
+  </scroll-view>
+  
+  <!-- 商品详情 -->
+  <view class="Search-Deta pop-bg {{show==1? '':'hidden'}}">
+    <view class='deta-prod'>
+      <view class='prod-mess'>
+        <label catchtap='PopClose'>
+          <icon type="clear" size="30"></icon>
+        </label>
+        <image class='mess-image' src='{{mess.image}}'></image>
+        <text class='mess-name'>{{mess.name}}</text>
+        <text class='mess-size'>{{mess.size}}</text>
+        <text class='mess-price'>{{mess.price}}元</text>
+        <view class='mess-num'>
+          <image class="sub {{mess.num>0? '':'hidden'}}" src='../../images/icon-sub.png' data-index="{{array}}" catchtap="catchSubNum"></image>
+          <text class="num {{mess.num>0? '':'hidden'}}">{{mess.num}}</text>
+          <image class='add' src='../../images/icon-add.png' data-index="{{array}}" catchtap="catchAddNum"></image>
+        </view>
+      </view>
+      <scroll-view scroll-y class='prod-info'>
+        <text>门店信息</text>
+        <view class='info-pro'>
+          <rich-text>{{name}}</rich-text>
+          <text>地址：{{saddress}}</text>
+          <text>电话：<text class='blue'>{{sphone}}</text></text>
+        </view>
+      </scroll-view>
+    </view>
+  </view>
+  
+  <view wx:if="{{result}}" class='Search-Pack' bindtap='tocart'>
+    <image class='pack-image' src='../../images/pack.png'></image>
+    <text class='pack-num'>{{Num}}</text>
+    <text class='pack-sum'>合计<text class='sum'>{{Sum}}</text>元</text>
+    <button>
+      <text class='arrow'>已选商品</text>
+    </button>
+  </view>
+</view>

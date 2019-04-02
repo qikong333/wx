@@ -1,0 +1,49 @@
+<!-- pages/draw/draw.wxml -->
+<view class='Draw'>
+  <view class='Draw-Menu'>
+    <view class="menu-list {{index==current?'active':''}}" wx:for="{{menu}}" wx:for-item="menu" wx:key="menu" data-index="{{index}}" catchtap='menuselect'>
+      {{menu}}
+    </view>
+  </view>
+  <scroll-view class="Draw-Info {{current==0?'on':'out'}}" scroll-y>
+    <view class='draw-list' wx:for="{{list}}" wx:key='list' wx:for-item='list' data-index="{{index}}">
+      <image wx:if="{{current==1}}" class="dt" src="../../images/c1.png"></image>
+      <image wx:if="{{current==2}}" class="dt" src="../../images/c2.png"></image>
+      <form>
+        <rich-text class='draw-list-l'>
+          <!-- <label>{{list.itype==1||list.stype==1?'部分品类券':list.style==0?'通用优惠券':'通用折扣券'}}</label>
+          <label class='valid2'>
+            <text class="tj">
+              {{list.itype==1||list.stype==1?'部分品类券':list.style==0?'通用优惠券':'通用折扣券'}}
+            </text>
+            <text class="tj">满{{list.limit}}元可用</text>
+          </label>
+          <label class='valid'>有效期：{{list.valid}}</label>
+          <label class="{{list.model?'up':'down'}}" data-index="{{index}}" catchtap='toshow'>
+            更多使用规则
+          </label> -->
+          <label>{{list.itype==1?'部分品类券':'全品类通用券'}}</label>
+          <view class="box2">
+            <text class="tj">满{{list.limit}}元可用</text>
+            <text class="tj">{{list.stype == 0?'所有门店通用':'仅部分门店'}}</text>
+          </view>
+        </rich-text>
+        <rich-text class='draw-list-r'>
+          <label>
+            <text class='value'>{{list.value}}</text>
+            {{list.style==0?'元':'折'}}
+          </label>
+        </rich-text>
+        <view class="boxBottom">
+          <view class="boxBottomL">有效期：{{list.valid}}</view>
+          <view class="boxBottomR" data-index="{{index}}" catchtap='toshow'>更多使用规则</view>
+        </view>
+        <rich-text class="draw-list-b {{list.model?'':'hidden'}}">
+          <label wx:if="{{list.itype==0}}">1.全品类可用</label>
+          <label wx:if="{{list.itype==1}}">1.以下物品可用：{{list.iname}}</label>
+          <label wx:if="{{list.stype==1}}">{{list.itype==1?2:1}}.以下店铺可用：{{list.sname}}</label>
+        </rich-text>
+      </form>
+    </view>
+  </scroll-view>
+</view>

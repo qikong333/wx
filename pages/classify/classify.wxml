@@ -1,0 +1,226 @@
+<!-- pages/classify/classify.wxml -->
+<view class='Classify'>
+  <block wx:if="{{HasItem}}">
+    <!-- 顶部区域 -->
+    <view class='Classify-Show' style="background-image: url('../../images/190212/takeaway/top@2x.png')">
+      <view class="shopInfo">
+        <view class="box1">
+          <image src='../../images/190212/coupon/logo@2x.png'></image>
+        </view>
+        <view class="box2">
+          <view class="text20">
+            <image src='../../images/190212/takeaway/icon_add@2x.png'></image>
+            <text class="text1">{{name}}</text>
+          </view>
+          <view class="text2">
+            <text class="text21">20元起配送 | 1公里免费配送</text>
+            <text class="text22">配送时间：{{openTime}}</text>
+          </view>
+        </view>
+        <view class="box3">
+          <button bindtap='GetMine'></button>
+          <navigator bindtap='GetMine'>
+            <image class="icon1" src='../../images/190212/takeaway/icon_menber@2x.png'></image>
+          </navigator>
+          <navigator open-type='navigate' url='../search/search'>
+            <icon class='search-bg' type="search" size="20" color="#fff"></icon>
+          </navigator>
+        </view>
+      </view>
+      <view class="couponList">
+        <view class="coupon" wx:for="{{couponList}}" wx:if="{{index<4}}">
+          <image src='../../images/190212/takeaway/bg@2x.png'></image>
+          <text wx:if="{{item.couponType==0}}">满{{item.threshold}}减{{item.amount}}元</text>
+          <text wx:elif="{{item.couponType==1}}">{{item.discount/10}}折</text>
+        </view>
+        <image bindtap='toCouponList' class="right" src='../../images/right.png'></image>
+      </view>
+      <!-- <view class='classify-search'>
+        <image src='../../images/location-w.png'></image>
+        <text>{{name}}</text>
+        <form>
+          <label></label>
+          <label></label> 
+        </form>
+        <button bindtap='GetMine'></button>
+        <navigator open-type='navigate' url='../search/search'>
+          <icon class='search-bg' type="search" size="20" color="#fff"></icon>
+          搜索
+        </navigator>
+      </view> -->
+      <!-- <view class="classify-banner">
+        <swiper indicator-dots="{{swiper.indicatorDots}}" indicator-active-color='#fff' autoplay="{{swiper.autoplay}}" interval="{{swiper.interval}}" duration="{{swiper.duration}}" circular="{{swiper.circular}}">
+          <block wx:for="{{swiper.imgUrls}}" wx:key='item'>
+            <swiper-item>
+              <image src="{{item}}" class="slide-image" width="100" height="150" />
+            </swiper-item>
+          </block>
+        </swiper>
+      </view> -->
+    </view>
+    <!-- 商品分类及展示区域 -->
+    <view class="Classify-Info" style="bottom:{{Num>0?'90rpx':'0'}}">
+      <!-- 左侧分类 -->
+      <scroll-view scroll-y class='classify-L'>
+        <!-- 特殊分类 -->
+        <view class='classify-main'>
+          <view class="main-info {{index==MainCurrent?'active':''}}" wx:if="{{main.show}}" wx:for="{{main}}" wx:for-item='main' wx:key='main' data-index="{{index}}" bindtap='MainSelect'>
+            <image wx:if="{{main.image}}" src='{{main.image}}'></image>
+            <text class='name'>{{main.name}}</text>
+          </view>
+        </view>
+        <!-- 商品一级分类 -->
+        <view class='classify-menu'>
+          <view class="menu-info {{index==MenuCurrent?'active':''}}" wx:for="{{menu}}" wx:for-item='menu' wx:key='menu' data-index="{{index}}" bindtap='MenuSelect'>
+            <text class='name'>{{menu.name}}</text>
+            <text class="mark {{menu.mark>0?'':'hidden'}}">{{menu.mark}}</text>
+          </view>
+        </view>
+      </scroll-view>
+      <!-- 右侧详情 -->
+      <scroll-view scroll-y upper-threshold='10' bindscrolltolower="MoreList" class='classify-R'>
+        <!-- 专题页【已隐藏，不在页面进行显示】{{appe==0?'hidden':'hidden'}}？？？？？？？？？？？？？ -->
+        <!-- <view class="classify-acty {{appe==0?'hidden':'hidden'}}">
+          <image wx:for="{{acty}}" wx:for-item='acty' wx:key='acty' src='{{acty.image}}' data-index="{{index}}" bindtap='GetActy'></image>
+        </view> -->
+        <!-- 领取优惠券 -->
+        <!-- <view class='classify-tips'>
+          <image src='../../images/coupon.png'></image>
+          <text>店铺优惠券</text>
+          <button bindtap="GetCoupon">点击领取</button>
+        </view> -->
+        <!-- 广告区 -->
+        <view class="classify-banner">
+          <swiper indicator-dots="{{swiper.indicatorDots}}" indicator-active-color='#fff' autoplay="{{swiper.autoplay}}" interval="{{swiper.interval}}" duration="{{swiper.duration}}" circular="{{swiper.circular}}">
+            <block wx:for="{{swiper.imgUrls}}" wx:key='item'>
+              <swiper-item>
+                <image src="{{item}}" class="slide-image" width="100" height="150" />
+              </swiper-item>
+            </block>
+          </swiper>
+        </view>
+        <!-- 非特殊分类下的 商品二级分类 -->
+        <view class='classify-kind'>
+          <view class="kind-info {{index==KindCurrent?'active':''}}" wx:for="{{MainCurrent==1?comm:MenuCurrent==null?'':kind[MenuCurrent]}}" wx:for-item='kind' wx:key='kind' data-index="{{index}}" catchtap='KindSelect'>
+            {{kind.name}}
+          </view>
+        </view>
+        <!-- 商品列表 -->
+        <view class='classify-list'>
+          <view class="list-info" wx:for="{{list}}" wx:for-item='list' wx:key='list' data-index="{{index}}" catchtap='PopOpen'>
+            <image wx:if="{{list.stock==0}}" class='list-empty' src='../../images/empty.png'></image>
+            <image class='list-image' src='{{list.image}}'></image>
+            <text class='list-name'>{{list.name}}</text>
+            <text class='list-size'>{{list.size}}</text>
+            <text class='list-price'>
+              {{list.price}}元
+              <text wx:if="{{MainCurrent==1}}">{{list.oprice}}元</text>
+            </text>
+            <label wx:if="{{MainCurrent==1}}" class='list-tag'>限时促销</label>
+            <view class='list-num'>
+              <image class="sub {{list.num>0? '':'hidden'}}" src='../../images/icon-sub.png' data-index="{{index}}" catchtap="catchSubNum"></image>
+              <text class="num {{list.num>0? '':'hidden'}}">{{list.num}}</text>
+              <image class='add' src='../../images/icon-add.png' data-index="{{index}}" catchtap="catchAddNum"></image>
+            </view>
+          </view>
+        </view>
+      </scroll-view>
+      <!-- 商品详情弹窗 -->
+      <view class="classify-deta pop-bg {{show==1? '':'hidden'}}">
+        <view class='deta-prod'>
+          <view class='prod-mess'>
+            <label catchtap='PopClose'>
+              <icon type="clear" size="30"></icon>
+            </label>
+            <image class='mess-image' src='{{mess.image}}' binderror='bindImgLoadErr' data-index="{{array}}"></image>
+            <text class='mess-name'>{{mess.name}}</text>
+            <text class='mess-size'>{{mess.size}}</text>
+            <text class='mess-price'>{{mess.price}}元</text>
+            <view class='mess-num'>
+              <image class="sub {{mess.num>0? '':'hidden'}}" src='../../images/icon-sub.png' data-index="{{array}}" catchtap="catchSubNum"></image>
+              <text class="num {{mess.num>0? '':'hidden'}}">{{mess.num}}</text>
+              <image class='add' src='../../images/icon-add.png' data-index="{{array}}" catchtap="catchAddNum"></image>
+            </view>
+          </view>
+          <scroll-view scroll-y class='prod-info'>
+            <text>门店信息</text>
+            <view class='info-pro'>
+              <rich-text>{{name}}</rich-text>
+              <text>地址：{{saddress}}</text>
+              <text>
+                电话：
+                <text class='blue'>{{sphone}}</text>
+              </text>
+            </view>
+          </scroll-view>
+        </view>
+      </view>
+      <!-- 底部优惠券弹窗 -->
+      <view class="classify-draw pop-bg {{coupon?'':'hidden'}}" catchtap='DrawClose'>
+        <view class='draw-area' catchtap='DrawOpen'>
+          <text>优惠券</text>
+          <label catchtap='DrawClose'>
+            <icon type="clear" size="20"></icon>
+          </label>
+          <scroll-view scroll-y class='draw-info'>
+            <view class="draw-list {{draw.taken==0?'active':'disable'}}" wx:if="{{draw.state}}" wx:for="{{draw}}" wx:key='draw' wx:for-item='draw' data-index="{{index}}" bindtap='GetDraw'>
+              <view class="draw-list-l {{draw.model?'up':'down'}}">
+                <form>
+                  <rich-text>
+                    {{draw.style==0?'¥':''}}
+                    <text>{{draw.value}}</text>
+                    {{draw.style==0?'':'折'}}
+                  </rich-text>
+                  <view>{{draw.itype==0&&draw.stype==0?'全品类':'部分品类'}} 满{{draw.limit}}元可用</view>
+                  <view>有效期：{{draw.valid}}</view>
+                  <!-- <view>有效期{{draw.taken==1?'至':draw.mod==0?'至':''}}{{draw.valid}}{{draw.taken==1?'':draw.mod==0?'':'天'}}</view> -->
+                  <label data-index="{{index}}" catchtap='toshow'></label>
+                </form>
+              </view>
+              <view class='draw-list-r'>
+                <form>
+                  <label>{{draw.taken==0?'未领取':'已领取'}}</label>
+                </form>
+              </view>
+              <view class="draw-list-b {{draw.model?'':'hidden'}}">
+                <form>
+                  <label wx:if="{{draw.itype==0&&draw.stype==0}}">1.全品类可用</label>
+                  <label wx:if="{{draw.itype==1}}">1.以下物品可用：{{draw.iname}}</label>
+                  <label wx:if="{{draw.stype==1}}">
+                    {{draw.itype==1?2:1}}.以下店铺可用：{{draw.sname}}
+                  </label>
+                </form>
+              </view>
+            </view>
+          </scroll-view>
+        </view>
+      </view>
+      <!-- 购物车 -->
+      <!-- <view class="classify-pack {{Num>0?'':'hidden'}}" bindtap='tocart'>
+        <image class='pack-image' src='../../images/pack.png'></image>
+        <text class='pack-num' style=''>{{Num}}</text>
+        <text class='pack-sum' style="line-height:{{Sum>=Tip?'90rpx':'55rpx'}}">
+          合计
+          <text class='sum'>{{Sum}}</text>
+          元
+        </text>
+        <text class="pack-tip {{Sum>=Tip?'hidden':''}}">
+          满
+          <text class='tip'>{{Tip}}</text>
+          元起送，未满请自提
+        </text>
+        <button>
+          <text class='arrow'>已选商品</text>
+        </button>
+      </view> -->
+    </view>
+  </block>
+  <block wx:else>
+    <view class='Classify-None'>
+      <image src='../../images/no-item.png'></image>
+      <text>门店暂无商品，敬请期待~</text>
+      <navigator open-type='navigateBack' url='../location/location'>选择门店</navigator>
+    </view>
+  </block>
+</view>
+<shopfooter Sum="{{Sum}}" Num="{{Num}}" products="{{carProductList}}"></shopfooter>

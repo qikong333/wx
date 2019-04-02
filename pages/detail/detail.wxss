@@ -1,0 +1,144 @@
+/* pages/detail/detail.wxss */
+.Detail{
+    padding:30rpx;
+    text-align: center;
+}
+
+.Detail-Bill .bill-style{
+    padding:50rpx 0;
+}
+
+.Detail-Bill .bill-style rich-text{
+    font-size: 48rpx;
+    font-weight: bold;
+}
+
+.Detail-Bill .bill-style text{
+    font-size: 30rpx;
+}
+
+.bill-store,.bill-list{
+    padding:15rpx 0;
+}
+
+.bill-store rich-text{
+    font-size: 32rpx;
+    font-weight: bold;
+}
+
+.bill-store text{
+    font-size: 30rpx;
+}
+
+.bill-list view{
+    font-size: 32rpx;
+    padding:15rpx 0;
+}
+
+.bill-list .list-con{
+    overflow: hidden;
+    position: relative;
+    padding:15rpx 0;
+}
+
+.bill-list .list-con text{
+    float:left;
+}
+
+.bill-list .list-con .con-name{
+    width:390rpx;
+    line-height: 60rpx;
+    text-align: left;
+    font-size:30rpx;
+    font-weight: bold;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;  
+}
+
+.bill-list .list-con .con-num{
+    width:100rpx;
+    line-height: 60rpx;
+    text-align: right;
+    font-size:30rpx;
+}
+
+.bill-list .list-con .con-sum{
+    width:200rpx;
+    line-height: 60rpx;
+    text-align: right;
+    font-size:30rpx;
+}
+
+.bill-list .list-con .con-size{
+    line-height: 40rpx;
+    font-size:24rpx;
+    color:#666;
+}
+
+.Detail-Sum{
+    padding:15rpx 0;
+    border-top:#eee 2rpx solid;
+    border-bottom:#eee 2rpx solid;
+}
+
+.Detail-Info{
+    padding:15rpx 0;
+}
+
+.Detail .detail-pro{
+    width:690rpx;
+    line-height: 70rpx;
+    padding:15rpx 0;
+    overflow: hidden;
+}
+
+.Detail .detail-pro>text{
+    width:200rpx;
+    height: 70rpx;
+    text-align: left;
+    font-size: 30rpx;
+    float: left;
+}
+
+.Detail .detail-pro>rich-text{
+    width:490rpx;
+    line-height: 70rpx;
+    text-align: right;
+    font-size: 30rpx;
+    position: relative;
+    float: right;
+}
+
+.Detail-Sum .detail-pro>rich-text{
+    height:70rpx;
+}
+
+.Detail-Sum .detail-pro:last-child>rich-text text{
+    font-size: 32rpx;
+    font-weight: bold;
+}
+
+.Detail-Info .detail-pro>rich-text text{
+    margin-left:20rpx;
+}
+
+.Detail-Info .detail-btn{
+    padding:15rpx;
+    font-size: 30rpx;
+    overflow: hidden;
+}
+
+.Detail-Info .detail-btn navigator{
+    width:170rpx;
+    height:55rpx;
+    line-height:55rpx;
+    text-align: center;
+    border:#ccc 2rpx solid;
+    border-radius: 50rpx;
+    float:right;
+}
+
+.Detail-Pay{
+    padding:30rpx 0;
+}

@@ -1,0 +1,145 @@
+/* pages/coupon/coupon.wxss */
+page{
+  background:#fafafa;
+}
+
+.Coupon-Info{
+  margin-bottom:100rpx;
+  padding:30rpx;
+}
+
+.Coupon-Info>text{
+  display: block;
+  margin-bottom:30rpx;
+  font-size: 30rpx;
+}
+
+.coupon-list{
+  width:662rpx;
+  margin-bottom:30rpx;
+  padding:15rpx;
+  background: #fff;
+  border-radius: 10rpx; 
+}
+
+.coupon-list form{
+  display: block;
+  width:618rpx;
+  padding:20rpx;
+  border:#ccc 1rpx dotted;
+  border-radius: 10rpx; 
+  overflow: hidden;
+}
+
+.coupon-list form .coupon-list-l{
+  width:400rpx;
+  height:140rpx;
+  text-align: left;
+  float:left;
+}
+
+.coupon-list form .coupon-list-r{
+  width:218rpx;
+  height:140rpx;
+  text-align: right;
+  float:right;
+}
+
+.coupon-list form .coupon-list-b{
+  width:618rpx;
+  float:left;
+  margin-top: 20rpx;
+}
+
+.coupon-list form label{
+  display: block;
+}
+
+.coupon-list form .coupon-list-l label:first-child{
+  line-height: 45rpx;
+  margin-bottom: 15rpx;
+  color:#000;
+  font-size: 36rpx;
+  font-weight: bold;
+}
+
+.coupon-list form .coupon-list-l label{
+  line-height: 40rpx;
+  font-size: 30rpx;
+  color:#999;
+  position: relative;
+}
+
+.coupon-list form .coupon-list-l .valid{
+  font-size: 25rpx;
+}
+
+.coupon-list form .coupon-list-l .up:after{
+  content: '';
+  display: inline-block;
+  width: 16rpx;
+  height: 16rpx;
+  margin-left:20rpx;
+  border-top: 2rpx solid #999;
+  border-left: 2rpx solid #999;
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  position: relative;
+  top: 5rpx;
+}
+
+.coupon-list form .coupon-list-l .down:after{
+  content: '';
+  display: inline-block;
+  width: 16rpx;
+  height: 16rpx;
+  margin-left:20rpx;
+  border-bottom: 2rpx solid #999;
+  border-right: 2rpx solid #999;
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  position: relative;
+  bottom: 5rpx;
+}
+
+.coupon-list form .coupon-list-r label:first-child{
+  line-height: 70rpx;
+  margin-bottom: 20rpx;
+  color:#ff5500;
+  font-size: 48rpx;
+}
+
+.coupon-list form .coupon-list-r label:first-child .value{
+  font-size: 60rpx;
+  font-weight: bold;
+}
+
+.coupon-list form .coupon-list-r label{
+  line-height: 40rpx;
+  font-size: 32rpx;
+}
+
+.coupon-list form .coupon-list-b label{
+  line-height: 40rpx;
+  font-size: 30rpx;
+  color:#999;
+}
+
+.coupon-lost .coupon-list{
+  opacity: 0.5;
+}
+
+.Coupon-Pass{
+  height:100rpx;
+  position: fixed;
+  left:0;
+  right:0;
+  bottom:0;
+}
+
+.Coupon-Pass button{
+  width:100%;
+  height:100%;
+  background: #fff;
+  border-radius: 0rpx;
+}

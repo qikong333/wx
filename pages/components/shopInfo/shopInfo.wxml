@@ -1,0 +1,26 @@
+<view class="shopInfo">
+  <view class="box1">
+    <image src='../../../images/190212/coupon/logo@2x.png'></image>
+  </view>
+  <view class="box2">
+    <view class="text20">
+      <image src='../../../images/190212/store/icon_MapMark@2x.png'></image>
+      <view class="text1">
+        <text class="text11">{{shopName}}</text>
+      </view>
+    </view>
+    <view class="text2">
+      <text class="text21">{{distributePrice}}元起配送  | {{distributeDistance}}公里免费配送</text>
+      <text class="text22">配送时间：{{openTime}}</text>
+    </view>
+  </view>
+  <view class="box3">
+    <!-- <button bindtap='GetMine'></button>
+    <navigator bindtap='GetMine'>
+      <image class="icon1" src='../../../images/190212/takeaway/icon_menber@2x.png'></image>
+    </navigator>
+    <navigator open-type='navigate' url='../search/search'>
+      <icon class='search-bg' type="search" size="20" color="#fff"></icon>
+    </navigator> -->
+  </view>
+</view>

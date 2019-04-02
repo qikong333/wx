@@ -1,0 +1,261 @@
+/* pages/draw/draw.wxss */
+.Draw-Menu {
+  width: 690rpx;
+  height: 100rpx;
+  padding: 0 30rpx;
+  background: #fff;
+}
+
+.Draw-Menu .menu-list {
+  float: left;
+  width: 230rpx;
+  height: 100%;
+  line-height: 100rpx;
+  text-align: center;
+  font-size: 28rpx;
+  position: relative;
+  color: #2e3133;
+}
+
+.Draw-Menu .menu-list.active {
+  color: #29aff6;
+}
+
+.Draw-Menu .menu-list.active:after {
+  content: '';
+  display: inline-block;
+  width: 50%;
+  height: 8rpx;
+  background: #29aff6;
+  border-radius: 20rpx;
+  position: absolute;
+  left: 25%;
+  bottom: 0%;
+}
+
+.Draw-Info {
+  width: 690rpx;
+  padding: 30rpx;
+  background: #fafafa;
+  position: absolute;
+  top: 100rpx;
+  bottom: 0;
+}
+
+.draw-list {
+  width: 662rpx;
+  margin-bottom: 30rpx;
+  padding: 15rpx;
+  background: #fff;
+  border-radius: 10rpx;
+  border-radius: 18rpx;
+}
+
+.draw-list form {
+  display: block;
+  width: 618rpx;
+  padding: 20rpx;
+  /* border: #ccc 1rpx dotted; */
+  border-radius: 10rpx;
+  overflow: hidden;
+}
+
+.draw-list form .draw-list-l {
+  width: 410rpx;
+  height: 128rpx;
+  border-bottom: 1px dashed #a2a6a8;
+  text-align: left;
+  float: left;
+}
+
+.draw-list form .draw-list-l .valid {
+  font-size: 25rpx;
+}
+
+.draw-list form .draw-list-l .valid2 {
+  display: flex;
+  width: 100%;
+  height: 32rpx;
+  line-height: 1;
+
+}
+
+.draw-list form .draw-list-l .tj {
+  font-size: 22rpx;
+  color: #fff;
+  background-color: #ff5733;
+  border-radius: 4rpx;
+  margin-right: 15rpx;
+  height: 32rpx;
+  float: left;
+  padding: 5rpx 12rpx;
+
+}
+
+.draw-list form .draw-list-r {
+  width: 208rpx;
+  height: 128rpx;
+  text-align: right;
+  float: right;
+  border-bottom: 1px dashed #a2a6a8;
+}
+
+.draw-list form .draw-list-b {
+  width: 618rpx;
+  float: left;
+  margin-top: 20rpx;
+}
+
+.draw-list form label {
+  display: block;
+}
+
+.draw-list form .draw-list-l label:first-child {
+  line-height: 45rpx;
+  margin-bottom: 15rpx;
+  color: #000;
+  font-size: 36rpx;
+  font-weight: bold;
+}
+
+.draw-list form .draw-list-l label {
+  line-height: 40rpx;
+  font-size: 30rpx;
+  color: #999;
+  position: relative;
+}
+
+.draw-list form .draw-list-l .up:after {
+  content: '';
+  display: inline-block;
+  width: 16rpx;
+  height: 16rpx;
+  margin-left: 20rpx;
+  border-top: 2rpx solid #999;
+  border-left: 2rpx solid #999;
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  position: relative;
+  top: 5rpx;
+}
+
+.draw-list form .draw-list-l .down:after {
+  content: '';
+  display: inline-block;
+  width: 16rpx;
+  height: 16rpx;
+  margin-left: 20rpx;
+  border-bottom: 2rpx solid #999;
+  border-right: 2rpx solid #999;
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  position: relative;
+  bottom: 5rpx;
+}
+
+.draw-list form .draw-list-r label:first-child {
+  line-height: 70rpx;
+  margin-bottom: 20rpx;
+  color: #ff5500;
+  font-size: 48rpx;
+}
+
+.draw-list form .draw-list-r label:first-child .value {
+  font-size: 60rpx;
+  font-weight: bold;
+}
+
+.draw-list form .draw-list-r label {
+  line-height: 40rpx;
+  font-size: 32rpx;
+}
+
+.draw-list form .draw-list-b label {
+  line-height: 40rpx;
+  font-size: 30rpx;
+  color: #999;
+}
+
+.boxBottom {
+
+  height: 72rpx;
+}
+
+.boxBottomL {
+  height: 72rpx;
+  line-height: 72rpx;
+  width: 66.66%;
+  font-size: 22rpx;
+  color: #a2a6a8;
+  float: left;
+}
+
+.boxBottomR {
+  height: 72rpx;
+  line-height: 72rpx;
+  width: 33.33%;
+  float: left;
+  font-size: 22rpx;
+  color: #a2a6a8;
+  text-align: right;
+}
+
+.out .draw-list {
+  background-color: #d6dade;
+  color: #fff !important;
+  position: relative;
+}
+
+.out .draw-list .dt {
+  position: absolute;
+  width: 150rpx;
+  height: 142rpx;
+  right: -15rpx;
+  top: -15rpx;
+}
+
+.out .draw-list form .draw-list-l label {
+  color: #fff !important;
+}
+
+.out .draw-list form .draw-list-l .tj {
+  background-color: #c2c7cc !important;
+
+}
+
+.out .draw-list form .draw-list-r label:first-child .value {
+  color: #fff !important;
+}
+
+.out .draw-list form .draw-list-r label {
+  color: #fff !important;
+
+}
+
+.out .boxBottomR {
+  color: #fff !important;
+
+}
+
+.out .boxBottomL {
+  color: #fff !important;
+
+}
+
+.out .draw-list form .draw-list-l {
+  border-bottom: 1px dashed #fff;
+  width: 308rpx;
+
+
+}
+
+.out .draw-list form .draw-list-r {
+  width: 308rpx;
+
+
+}
+
+.out .draw-list form .draw-list-r {
+  border-bottom: 1px dashed #fff;
+  text-align: left !important;
+}

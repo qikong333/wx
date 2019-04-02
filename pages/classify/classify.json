@@ -1,0 +1,10 @@
+{
+  "backgroundTextStyle": "light",
+  "navigationBarBackgroundColor": "#00a3ff",
+  "navigationBarTitleText": "六沐便利店",
+  "navigationBarTextStyle": "white",
+  "usingComponents": {
+    "shopfooter": "../components/shopfooter/shopfooter"
+  }
+
+}

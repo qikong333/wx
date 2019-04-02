@@ -1,0 +1,28 @@
+<!--pages/refund/refund.wxml-->
+<view class='Refund'>
+  <view class='Refund-Main'>
+    <view>{{state[status]}}</view>
+    <rich-text>{{total}}</rich-text>
+    <text>退款金额(元)</text>
+    <form>
+      <icon type='info' color='#ccc' size='18'></icon>
+      退款路径:按支付方式原路返回
+    </form>
+  </view>
+  <view class='Refund-Deta'>
+    <view class='refund-flow'>
+      <rich-text>退货/款流程</rich-text>
+      <view class='flow-info' wx:for="{{flow}}" wx:for-item='flow' wx:key='flow' data-index="{{index}}">
+        <label><icon type="{{index < step?'success':'waiting'}}" color="{{index < step?'#50c67c':'#ccc'}}" size='30'></icon></label>
+        <text style="color:{{index < step?'#50c67c':'#ccc'}}">{{flow}}</text>
+      </view>
+    </view>
+    <view class='refund-list'>
+      <rich-text>退货/款信息</rich-text>
+      <view class='list-info' wx:for="{{list}}" wx:for-item='list' wx:key='list' data-index="{{index}}">
+        <text>{{list.tip}}</text>
+        <form>{{list.con}}</form>
+      </view>
+    </view>
+  </view>
+</view>

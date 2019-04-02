@@ -1,0 +1,10 @@
+{
+  "backgroundTextStyle": "light",
+  "navigationBarBackgroundColor": "#29aff6",
+  "navigationBarTitleText": "",
+  "navigationBarTextStyle": "black",
+  "navigationStyle": "custom",
+  "usingComponents": {
+    "shopfooter": "../components/shopfooter/shopfooter"
+  }
+}

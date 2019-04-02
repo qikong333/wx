@@ -1,0 +1,57 @@
+<!-- pages/location/location.wxml -->
+<view class='Location'>
+  <view class='Location-Posi'>
+    <text>当前定位</text>
+    <button bindtap='GetLocation'>重新定位</button>
+    <view class='Location-Posi-info'>
+      <image class="aa" src='../../images/location-b.png'></image>
+      <text>{{address}}</text>
+      <rich-text>温馨提示：若收货地址超出门店配送范围，请到店自提~</rich-text>
+    </view>
+    <text>附近门店</text>
+  </view>
+  <!-- <view class='Location-Near'>
+    <block wx:for="{{storelist}}" wx:key="id">
+      <view class="store {{show?'':index==near?'':'hidden'}}" bindtap='tobuy' data-index="{{index}}">
+        <text class='store-name'>{{item.name}}</text>
+        <label class="store-state" style="background:{{item.status?'#ff5500':'#999'}}">
+          {{item.status?'营业中':'打烊中'}}
+        </label>
+        <text class='store-distance'>距离{{item.distance}}km</text>
+        <text class='store-address'>{{item.address}}</text>
+        <text class='store-remarks'>营业时间：{{item.opentime}}</text>
+      </view>
+    </block>
+    <rich-text class="{{show?'disable':'active'}}" catchtap='toshow'>
+      <text>{{tips}}</text>
+    </rich-text>
+  </view> -->
+</view>
+<!-- <view class="shopList" hover-class="none" hover-stop-propagation="false">
+  <view class="box" hover-class="none" hover-stop-propagation="false" wx:for="{{storelist}}" wx:key="id">
+    <view class="box1" selectable="false" space="false" decode="false">
+      <text class="box11" selectable="false" space="false" decode="false">{{item.name}}</text>
+      <text class="box12" style="background:{{item.status?'#ff5500':'#999'}}">
+        {{item.status?'营业中':'打烊中'}}
+      </text>
+    </view>
+    <view class="box2" selectable="false" space="false" decode="false">距离{{item.distance}}km</view>
+    <view class="box3" selectable="false" space="false" decode="false">{{item.address}}</view>
+    <view class="box4" selectable="false" space="false" decode="false"></view>
+  </view>
+</view> -->
+<view class='Location-Near Location2'>
+  <block wx:for="{{storelist}}" wx:key="id">
+    <view class="store" bindtap='tobuy' data-index="{{index}}">
+      <text class='store-name'>{{item.name}}</text>
+      <label class="store-state" style="background:{{item.status?'#ff5500':'#999'}}">
+        {{item.status?'营业中':'打烊中'}}
+      </label>
+      <text class='store-distance'>距离{{item.distance}}km</text>
+      <text class='store-address'>{{item.address}}</text>
+      <text class='store-remarks'>外送电话：{{item.tel}}</text>
+      <image class="img img1" src='../../images/190212/store/icon_MapMark@2x.png'></image>
+      <image class="img img2" src='../../images/190212/store/icon_phone@2x.png'></image>
+    </view>
+  </block>
+</view>

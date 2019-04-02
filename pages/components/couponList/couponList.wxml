@@ -1,0 +1,28 @@
+<scroll-view class="couponListBoxscroll" scroll-y upper-threshold='10' bindscrolltolower="MoreList">
+    <view class="couponListBox">
+        <view class="item" hover-class="none" hover-stop-propagation="false" wx:for="{{draw2}}" wx:key='draw' wx:for-item='draw' data-index="{{index}}" bindtap='GetDraw'>
+            <view class="i_l" hover-class="none" hover-stop-propagation="false">
+                <text class="z" selectable="false" space="false" decode="false">
+                    {{draw.value}}
+                </text>
+                <text class="f" selectable="false" space="false" decode="false">
+                    {{draw.style==0?'元':'折'}}
+                </text>
+            </view>
+            <view class="i_m" hover-class="none" hover-stop-propagation="false">
+                <text class="m1" selectable="false" space="false" decode="false">
+                    满{{draw.limit}}元可用
+                </text>
+                <text class="m2" selectable="false" space="false" decode="false">
+                    {{draw.itype==0?'全品类':'部分品类'}}
+                </text>
+                <text class="m2" selectable="false" space="false" decode="false">
+                    {{draw.valid}}
+                </text>
+            </view>
+            <view class="i_r {{draw.taken==0?'on':'out'}}" hover-class="none" hover-stop-propagation="false">
+                {{draw.taken==0?'未领取':'已领取'}}
+            </view>
+        </view>
+    </view>
+</scroll-view>

@@ -1,0 +1,91 @@
+.couponListBoxscroll {
+    height: 1026rpx;
+
+}
+
+.couponListBox {
+    padding: 30rpx;
+    background: #f4f6f9;
+}
+
+.couponListBox .item {
+    overflow: hidden;
+    height: 150rpx;
+    margin-bottom: 30rpx;
+    background-color: #ffffff;
+    border-radius: 18rpx;
+}
+
+.couponListBox .item .i_l {
+    width: 220rpx;
+    float: left;
+    height: 150rpx;
+    /* justify-content: center; */
+    display: flex;
+    align-items: center;
+
+}
+
+.couponListBox .item .i_l .z {
+    color: #ff5733;
+    font-size: 72rpx;
+    float: left;
+    margin-left: 25rpx;
+    line-height: 5rpx;
+
+}
+
+.couponListBox .item .i_l .f {
+    color: #ff5733;
+    float: left;
+    font-size: 26rpx;
+}
+
+.couponListBox .item .i_m {
+    width: 320rpx;
+    height: 90rpx;
+    float: left;
+    padding: 30rpx 0;
+    line-height: 20rpx;
+
+}
+
+.couponListBox .item .i_m .m1 {
+    width: 100%;
+    display: flex;
+    font-weight: 600;
+    color: #000000;
+    font-size: 30rpx;
+    margin-bottom: 20rpx;
+
+}
+
+.couponListBox .item .i_m .m2 {
+    width: 100%;
+    font-size: 22rpx;
+    display: flex;
+    color: #a2a6a8;
+    margin-bottom: 10rpx;
+    line-height: 10rpx;
+
+}
+
+.couponListBox .item .i_r {
+    width: 150rpx;
+    float: left;
+    height: 150rpx;
+    color: #ffffff;
+    justify-content: center;
+    display: flex;
+    font-size: 30rpx;
+    align-items: center;
+}
+
+.couponListBox .item .out {
+    background-color: #c3c7cc;
+}
+
+.couponListBox .item .on {
+
+    background-color: #ff5733;
+}

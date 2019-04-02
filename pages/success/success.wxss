@@ -1,0 +1,35 @@
+/* pages/success/success.wxss */
+.Success{
+    text-align: center;
+}
+.Success-Status{
+    margin-top: 150rpx;
+}
+
+.Success-Detail{
+    padding:60rpx 0;
+}
+
+.Success-Detail view{
+    font-size: 60rpx;
+    font-weight: bold;
+}
+
+.Success-Detail rich-text{
+    font-size: 32rpx;
+}
+
+.Success-Detail rich-text text{
+    margin:0 15rpx;
+    color:#ff5600;
+}
+
+.Success-Option navigator{
+    display: inline-block;
+    margin:0 50rpx;
+    padding:15rpx 30rpx;
+    font-size: 36rpx;
+    font-weight: bold;
+    border:#eee 4rpx solid;
+    border-radius: 50rpx;
+}

@@ -1,0 +1,9 @@
+<view class="shopfooter">
+  <view class="sf_l">
+    <image wx:if="{{Num>0}}" bindtap='tocart' class="sf_img" src='../../../images/icon_car@2x.png'></image>
+    <text wx:if="{{Num>0}}" class="sf_text1">￥</text>
+    <text wx:if="{{Num>0}}" class="sf_text2">{{Sum}}</text>
+    <text wx:if="{{Num>0}}" class="sf_text3">{{Num}}</text>
+  </view>
+  <view class="sf_r {{Num>0?'bg1':'bg0'}}" bindtap="bindConfirm">去结算（{{Num}}）</view>
+</view>

@@ -1,0 +1,138 @@
+<!-- pages/order/order.wxml -->
+<view class='Order'>
+  <block wx:if="{{Order}}">
+    <view class='Order-Menu'>
+      <view class="menu-list {{index==current?'active':''}}" wx:for="{{menu}}" wx:for-item="menu" wx:key="menu" data-index="{{index}}" catchtap='menuselect'>
+        {{menu}}
+      </view>
+    </view>
+    <scroll-view scroll-y bindscrolltolower="moreorder" class='Order-Info'>
+      <block wx:for="{{list}}" wx:for-item="list" wx:key="id">
+        <view class='orderList'>
+          <view class="box1" hover-class="none" hover-stop-propagation="false">
+            <view class="box1L" hover-class="none" hover-stop-propagation="false">
+              <image class="img" src="../../images/20190228173302.png" alt=""></image>
+              {{list.name}}
+            </view>
+            <view class="box1R" hover-class="none" hover-stop-propagation="false">
+              {{state[list.status-1]}}
+            </view>
+          </view>
+          <view class="box2" bindtap='todetail' data-index="{{index}}">
+            <view class="box21" hover-class="none" hover-stop-propagation="false">
+              <image class="img" src='{{list.image[0]}}'></image>
+              <text class="text">x{{list.proNum[0]}}</text>
+            </view>
+            <view class="box21" hover-class="none" hover-stop-propagation="false">
+              <image class="img" src='{{list.image[1]}}'></image>
+              <text class="text" wx:if="{{list.proNum[1]}}">x{{list.proNum[1]}}</text>
+            </view>
+            <view class="box21" hover-class="none" hover-stop-propagation="false">
+              <image class="img" src='{{list.image[2]}}'></image>
+              <text class="text" wx:if="{{list.proNum[2]}}">x{{list.proNum[2]}}</text>
+            </view>
+            <view class="box22">
+              <text class="text2" wx:if="{{list.image.length>2}}">查看更多</text>
+              <image class="img2" wx:if="{{list.image.length>2}}" src="../../images/20190228175151.png" alt=""></image>
+            </view>
+          </view>
+          <view class="box3" hover-class="none" hover-stop-propagation="false">
+            共{{list.num}}件商品，实付：￥
+            <text>{{list.sum}}</text>
+          </view>
+          <view class="box4" hover-class="none" hover-stop-propagation="false">
+            <button class=' fr' wx:if="{{list.status==1}}" data-index="{{index}}" bindtap='cencel'>
+              取消订单
+            </button>
+            <button class='active fr' wx:if="{{list.status==1}}" data-index="{{index}}" bindtap='topay'>
+              去支付
+            </button>
+            <button class='active fr' wx:if="{{list.status==3||list.status==4}}" data-index="{{index}}" bindtap='tofinish'>
+              确认收货
+            </button>
+            <button class='fr' wx:if="{{list.status==6&&!list.code==0}}" bindtap='tocode' data-index="{{index}}">
+              提货码
+            </button>
+            <button class='fr' wx:if="{{list.status==2||list.status==3||list.status==4||list.status==5||list.status==6||list.status==20}}" bindtap='toprogress' data-index="{{index}}">
+              订单进度
+            </button>
+            <!-- <button class='fr' bindtap='todetail' data-index="{{index}}">查看详情</button> -->
+            <button class='fr' wx:if="{{list.status==2||list.status==3||list.status==4||list.status==6||list.status==11||list.status==20}}" bindtap='GetRefund' data-index="{{index}}">
+              申请退款
+            </button>
+            <button class='fr' wx:if="{{list.status==15}}" bindtap='torefund' data-index="{{index}}">
+              退款详情
+            </button>
+          </view>
+        </view>
+      </block>
+    </scroll-view>
+    <!-- <scroll-view scroll-y bindscrolltolower="moreorder" class='Order-Info'>
+      <block wx:for="{{list}}" wx:for-item="list" wx:key="id">
+        <view class='info-list'>
+          <view class='list-pro'>
+            <view class='fl'>{{list.name}}</view>
+            <view class='fr'>
+              合计
+              <text class='sum'>{{list.sum}}</text>
+              元
+            </view>
+          </view>
+          <view class='list-pro'>
+            <view class='fl'>{{list.date}}</view>
+            <view class='state fr'>{{state[list.status-1]}}</view>
+          </view>
+          <view class='list-pro'>
+            <view class='fl'>
+              <image src='{{list.image[0]}}'></image>
+              <image src='{{list.image[1]}}'></image>
+              <image src='{{list.image[2]}}'></image>
+            </view>
+            <view class='num fr'>共{{list.num}}件</view>
+          </view>
+          <view class='list-pro'>
+            <button class='active fr' wx:if="{{list.status==1}}" data-index="{{index}}" bindtap='topay'>
+              去支付
+            </button>
+            <button class='active fr' wx:if="{{list.status==3||list.status==4}}" data-index="{{index}}" bindtap='tofinish'>
+              确认收货
+            </button>
+            <button class='fr' wx:if="{{list.status==6&&!list.code==0}}" bindtap='tocode' data-index="{{index}}">
+              提货码
+            </button>
+            <button class='fr' wx:if="{{list.status==2||list.status==3||list.status==4||list.status==5||list.status==6||list.status==20}}" bindtap='toprogress' data-index="{{index}}">
+              订单进度
+            </button>
+            <button class='fr' bindtap='todetail' data-index="{{index}}">查看详情</button>
+            <button class='fr' wx:if="{{list.status==2||list.status==3||list.status==4||list.status==6||list.status==11||list.status==20}}" bindtap='GetRefund' data-index="{{index}}">
+              申请退款
+            </button>
+            <button class='fr' wx:if="{{list.status==15}}" bindtap='torefund' data-index="{{index}}">
+              退款详情
+            </button>
+          </view>
+        </view>
+      </block>
+      <view wx:if="{{last}}" class='info-tips'>没有更多订单啦~</view>
+      <view wx:if="{{blank}}" class='info-none'>
+        <image src='../../images/no-order.png'></image>
+        <text>没有相关订单</text>
+      </view>
+    </scroll-view> -->
+    <view wx:if="{{show}}" class='Order-Code pop-bg'>
+      <form>
+        <text>提货码</text>
+        <canvas canvas-id="barcode" />
+        <label>{{code}}</label>
+        <button catchtap='tohide'>确定</button>
+      </form>
+    </view>
+  </block>
+  <block wx:else>
+    <view class='Order-None'>
+      <image src='../../images/no-order.png'></image>
+      <text>亲，你还没有订单哦~</text>
+      <navigator open-type='redirect' url='../location/location'>进店逛逛</navigator>
+    </view>
+  </block>
+</view>

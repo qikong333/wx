@@ -1,0 +1,109 @@
+/* pages/progress/progress.wxss */
+.Progress-Deta{
+  padding:0 30rpx;
+  border-bottom:#f5f5f5 30rpx solid;
+}
+
+.deta-shop,.deta-send{
+  padding:50rpx 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.deta-send{
+  border-top:#eee 2rpx solid;
+}
+
+.deta-shop rich-text,.deta-send  rich-text{
+  float:left;
+  width:420rpx;
+  line-height: 50rpx;
+  font-size: 36rpx;
+  font-weight: bold;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.deta-shop text,.deta-send text{
+  float:left;
+  width:420rpx;
+  line-height: 50rpx;
+  color:#999;
+  font-size: 30rpx;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.deta-shop button,.deta-send button{
+  position:absolute;
+  right:0;
+  top:65rpx;
+  width:200rpx;
+  height:70rpx;
+  line-height: 66rpx;
+  padding:0;
+  text-align: center;
+  font-size: 30rpx;
+  border:#ccc 2rpx solid;
+  border-radius: 50rpx;
+}
+
+.Progress-Info{
+  padding:0 30rpx;
+}
+
+.info-text{
+  display: block;
+  padding:50rpx 0;
+  text-align: center;
+  font-size: 36rpx;
+  font-weight: bold;
+}
+
+.info-list{
+  padding:0 0 50rpx 50rpx;
+  position: relative;
+}
+
+.info-list rich-text{
+  font-size: 32rpx;
+  color:#999
+}
+
+.info-list:first-of-type rich-text{
+  color:#000
+}
+
+.info-list text{
+  font-size: 28rpx;
+  color:#999
+}
+
+.info-list::before{
+  content: '';
+  display: inline-block;
+  width:15rpx;
+  height:15rpx;
+  background: #ccc;
+  border-radius: 50%;
+  position: absolute;
+  left:10rpx;
+  top:20rpx;
+}
+
+.info-list:first-of-type:before{
+  background: #50c67c;
+}
+
+.info-list:not(:last-of-type)::after{
+  content: '';
+  display: inline-block;
+  width:1rpx;
+  height:80rpx;
+  background: #ccc;
+  position: absolute;
+  left:17rpx;
+  top:60rpx;
+}

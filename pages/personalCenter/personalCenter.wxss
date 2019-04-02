@@ -1,0 +1,195 @@
+page {
+  background: #f4f6f9;
+}
+
+.box1 .bg {
+  width: 100%;
+}
+
+.box1 {
+  position: relative;
+}
+
+.box1 .boxTop {
+  font-size: 36rpx;
+  line-height: 36rpx;
+  color: #ffffff;
+  text-align: center;
+  width: 100%;
+  position: absolute;
+  top: 90rpx;
+  left: 0;
+}
+.box1 .boxTop .bc {
+  padding: 20rpx;
+  width: 16rpx;
+  height: 32rpx;
+  position: absolute;
+  top: -15rpx;
+  left: 0;
+  z-index: 99;
+}
+
+.box1 .boxCont {
+  width: 100%;
+  position: absolute;
+  top: 160rpx;
+  left: 30rpx;
+  font-size: 36rpx;
+  color: #ffffff;
+}
+
+.box1 .boxCont .clientPic {
+  float: left;
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 100rpx;
+}
+
+.box1 .boxCont .clientName {
+  float: left;
+  line-height: 120rpx;
+  padding-left: 30rpx;
+}
+
+.box2 {
+  height: 340rpx;
+  position: relative;
+}
+
+.box2 .fd {
+  z-index: 9;
+  position: absolute;
+  top: -40rpx;
+  left: 30rpx;
+  width: 690rpx;
+  height: 340rpx;
+  background-color: #ffffff;
+  border-radius: 18rpx;
+  box-shadow: 0rpx 0rpx 20rpx 5rpx rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+}
+
+.box2 .list1 {
+  height: 130rpx;
+  width: 624rpx;
+  background-color: #ffffff;
+  /* overflow: hidden; */
+  padding: 0 33rpx;
+}
+
+.box2 .list1 .LT1 {
+  font-size: 32rpx;
+  color: #2e3133;
+  /* padding-left: 33rpx; */
+  height: 130rpx;
+  float: left;
+  line-height: 130rpx;
+  width: 30%;
+}
+
+.box2 .list1 .LT2 {
+  font-size: 24rpx;
+  float: left;
+  width: 62%;
+  color: #a2a6a8;
+  height: 130rpx;
+  line-height: 130rpx;
+  text-align: right;
+  /* padding-right: 33rpx; */
+}
+
+.box2 .list1 .LT3 {
+  float: left;
+  width: 8%;
+  height: 130rpx;
+  line-height: 130rpx;
+  display: flex;
+}
+
+.box2 .list1 image {
+  display: block;
+  width: 14rpx;
+  height: 28rpx;
+  margin: auto;
+}
+
+.box2 .list2 {
+  padding: 0 35rpx;
+}
+
+.box2 .list2 .LL1 {
+  border-top: 1rpx solid#dde0e4;
+  width: 25%;
+  float: left;
+  text-align: center;
+  padding-top: 50rpx;
+}
+
+.box2 .list2 .LL1 .LLimg {
+  width: 59rpx;
+  display: block;
+  margin: 0 auto;
+  height: 56rpx;
+  border-top: 1rpx solid #dde0e4;
+}
+
+.box2 .list2 .LL1 .LLtext {
+  font-size: 26rpx;
+  /* line-height: 36rpx; */
+  color: #2e3133;
+}
+
+.box3 {
+  margin: 0 auto;
+  width: 690rpx;
+  background: #ffffff;
+  border-radius: 18rpx;
+  overflow: hidden;
+}
+
+.box3 .list {
+  margin: 0 auto;
+  width: 554rpx;
+  height: 130rpx;
+  line-height: 130rpx;
+  position: relative;
+}
+
+.box3 .list:first-child {
+  border-bottom: 1rpx solid #dde0e4;
+}
+
+.box3 .list .img1 {
+  width: 68rpx;
+  height: 40rpx;
+}
+
+.box3 .list .img2 {
+  width: 50rpx;
+  height: 50rpx;
+}
+
+.box3 .list text {
+  font-size: 32rpx;
+  margin-left: 40rpx;
+  color: #2e3133;
+}
+
+.box3 .list .img3 {
+  width: 14rpx;
+  height: 28rpx;
+  position: absolute;
+  right: 0;
+  top: 50rpx;
+}
+
+.box4 {
+  text-align: center;
+}
+.box4 .imgb {
+  padding-top: 140rpx;
+  margin: 0 auto;
+  width: 166rpx;
+  height: 89rpx;
+}

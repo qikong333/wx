@@ -1,0 +1,496 @@
+/* pages/confirm/confirm.wxss */
+.Confirm{
+    position: absolute;
+    left:0;
+    right:0;
+    top:0;
+    bottom:0;
+    padding:20rpx;
+    padding-bottom:160rpx;
+    background: #fafafa; 
+    overflow-y: scroll;
+}
+
+.Confirm-Mode{
+    height:80rpx;
+    position: relative;
+}
+
+.Confirm-Mode .mode-send,.Confirm-Mode .mode-pick{
+    position: absolute;
+    top:0;
+    width:315rpx;
+    height:80rpx;
+    line-height: 80rpx;
+    text-align: center;
+    color:#b3b3b3;
+    background: #eee;
+    font-size: 32rpx;
+    border-top-left-radius: 15rpx;
+    border-top-right-radius: 15rpx;
+}
+
+
+
+.Confirm-Mode .mode-send{
+    left:20rpx;
+}
+
+.Confirm-Mode .mode-pick{
+    right:20rpx;
+}
+
+.Confirm-Mode .mode-send.active,.Confirm-Mode .mode-pick.active{
+    width:355rpx;
+    color:#29aff6;
+    background: #fff;
+    font-size: 36rpx;
+    font-weight: bold;
+}
+
+.Confirm-Mode .mode-send.active{
+    left:0;
+}
+
+.Confirm-Mode .mode-send.active:before {
+    content: '';
+    position: absolute;
+    right: -14rpx;
+    bottom: 0;
+    width: 15rpx;
+    height: 15rpx;
+    background: #fff;
+
+}
+
+.Confirm-Mode .mode-send.active:after {
+    content: '';
+    position: absolute;
+    right: -14rpx;
+    bottom: 0;
+    width: 15rpx;
+    height: 15rpx;
+    background: #fafafa;
+    border-radius: 0 0 0 20px;
+}
+
+.Confirm-Mode .mode-pick.active{
+    right:0;
+}
+
+.Confirm-Mode .mode-pick.active:before {
+    content: '';
+    position: absolute;
+    left: -14rpx;
+    bottom: 0;
+    width: 15rpx;
+    height: 15rpx;
+    background: #fff;
+
+}
+
+.Confirm-Mode .mode-pick.active:after {
+    content: '';
+    position: absolute;
+    left: -14rpx;
+    bottom: 0;
+    width: 15rpx;
+    height: 15rpx;
+    background: #fafafa;
+    border-radius: 0 0 20px 0;
+}
+
+.Confirm-info{
+    text-align: center;
+    padding:30rpx;
+    background: #fff;
+    border-radius: 15rpx;
+}
+
+.Confirm-info.send{
+    padding:30rpx 80rpx;
+    background: #fff;
+    border-radius:0 15rpx 15rpx 15rpx;
+}
+
+.Confirm-info.pick{
+    padding:30rpx;
+    background: #fff;
+    border-radius:15rpx 0 15rpx 15rpx;
+}
+
+.info-send{
+  position: relative;
+}
+
+.info-send navigator:after{
+    content: '';
+    width: 20rpx;
+    height: 20rpx;
+    border-top: 4rpx solid #999;
+    border-right: 4rpx solid #999;
+    position: absolute;
+    right:-50rpx;
+    top:40%;
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+}
+
+.info-send image{
+    width:36rpx;
+    height:48rpx;
+    position: absolute;
+    left:-50rpx;
+    top:35%;
+}
+
+.info-send .send-address{
+    display: block;
+    max-height: 120rpx;
+    line-height: 60rpx;
+    font-size: 32rpx;
+    font-weight: bold;
+    overflow: hidden;
+}
+
+.info-send .send-name,.info-send .send-phone{
+    margin:0 15rpx;
+    font-size: 30rpx;
+    color:#666;
+}
+
+.info-send icon{
+    margin-right:20rpx;
+    vertical-align: -7rpx;
+}
+
+.info-send .send-warn{
+    line-height: 120rpx;
+    font-size: 30rpx;
+}
+
+.info-pick .pick-store{
+    line-height: 60rpx;
+    padding-bottom:30rpx;
+    
+}
+
+.info-pick .pick-store .pick-name{
+    display: block;
+    font-size: 36rpx;
+    font-weight: bold;
+}
+
+.info-pick .pick-store .pick-address{
+    font-size: 30rpx;
+    color:#666;
+}
+
+.info-pick .pick-deta{
+  padding:30rpx 0;
+  border-top: #eee 2rpx solid;
+  border-bottom: #eee 2rpx solid;
+}
+
+.info-pick .pick-deta form{
+  display: inline-block;
+  width:324rpx;
+  height:100rpx;
+  position: relative;
+}
+
+.info-pick .pick-deta form:first-child{
+  border-right:#eee 2rpx solid;
+}
+
+.info-pick .pick-deta form:last-child:after{
+  content: '';
+  width: 20rpx;
+  height: 20rpx;
+  margin-left:20rpx;
+  margin-right:5rpx;
+  border-top: 4rpx solid #999;
+  border-right: 4rpx solid #999;
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  position: absolute;
+  top:35%;
+  right:2%;
+}
+
+.info-pick .pick-deta form text{
+  display:block;
+  line-height: 40rpx;
+  color:#999;
+  font-size: 30rpx;
+}
+
+.info-pick .pick-deta form label{
+  display:block;
+  line-height: 60rpx;
+  font-size: 34rpx;
+}
+
+.info-pick .pick-mess{
+    padding-top:30rpx;
+    font-size: 32rpx;
+    overflow: hidden;
+    position: relative;
+}
+
+.info-pick .pick-mess label{
+  vertical-align: middle;
+  margin-right:20rpx;
+}
+
+.Confirm-List{
+    margin:30rpx 0;
+    padding:30rpx;
+    background: #fff;
+    border-radius: 15rpx;
+}
+
+.Confirm-List .list-tip{
+    font-size: 32rpx;
+    font-weight: bold;
+    margin-bottom:30rpx;
+}
+
+.Confirm-List .list-con{
+    max-height: 650rpx;
+    border-bottom:#eee 1rpx solid;
+}
+
+.Confirm-List .list-con view{
+    padding-bottom:30rpx;
+    overflow: hidden;
+    position: relative;
+}
+
+.Confirm-List .list-con .con-image{
+    width:100rpx;
+    height:100rpx;
+    margin-right:20rpx;
+    float:left;
+}
+
+.Confirm-List .list-con text{
+    float:left;
+}
+
+.Confirm-List .list-con .con-name{
+    width:300rpx;
+    line-height: 60rpx;
+    font-size:30rpx;
+    font-weight: bold;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.Confirm-List .list-con .con-num{
+    width:70rpx;
+    line-height: 60rpx;
+    text-align: right;
+    font-size:30rpx;
+}
+
+.Confirm-List .list-con .con-sum{
+    width:160rpx;
+    line-height: 60rpx;
+    text-align: right;
+    font-size:30rpx;
+}
+
+.Confirm-List .list-con .con-size{
+    width:250rpx;
+    line-height: 40rpx;
+    font-size:24rpx;
+    color:#666;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.Confirm-List .list-sum,.Confirm-List .list-tag{
+    padding-top:20rpx;
+    font-size: 32rpx;
+    overflow: hidden;
+}
+
+.Confirm-List .list-sum text,.Confirm-List .list-tag text{
+    margin:0 15rpx;
+}
+
+.Confirm-List .list-tag label{
+  vertical-align: middle
+}
+
+.Confirm-List .list-pop view{
+  background: #fff;
+  border-radius: 20rpx;
+  position: absolute;
+  top:50%;
+  left:50rpx;
+  right:50rpx;
+  transform: translateY(-50%);
+}
+
+.Confirm-List .list-pop view form{
+  display: block;
+  padding:0 50rpx;
+}
+
+.Confirm-List .list-pop view form label{
+  display: block;
+  padding:30rpx 0;
+}
+
+.Confirm-List .list-pop view form label:first-child{
+  border-bottom:#eee 1rpx solid;
+}
+
+.Confirm-List .list-pop view form rich-text{
+  display: block;
+  padding:10rpx 0;
+  font-size: 32rpx;
+  font-weight: bold;
+}
+
+.Confirm-List .list-pop view form label:first-child text{
+  color:#999;
+  font-size: 28rpx;
+}
+
+.Confirm-List .list-pop view form label:first-child .blue{
+  color:#29aff6;
+  margin-left:20rpx;
+}
+
+.Confirm-List .list-pop view form label:first-child text:nth-of-type(2):after{
+  content: '';
+  display: inline-block;
+  width:1rpx;
+  height:20rpx;
+  margin:0 20rpx;
+  background: #eee;
+}
+
+.Confirm-List .list-pop view form label:last-child text{
+  display: block;
+  padding:10rpx 0;
+  color:#999;
+  font-size: 30rpx;
+}
+
+.Confirm-List .list-pop view button{
+  height:100rpx;
+  line-height: 100rpx;
+  background: #fff;
+  color:#29aff6;
+  font-size: 32rpx;
+  font-weight: bold;
+  border-radius: 0;
+  border-bottom-left-radius:20rpx; 
+  border-bottom-right-radius:20rpx; 
+  border-top:#eee 1rpx solid;
+}
+
+.Confirm-Menu{
+    padding:0 30rpx;
+    background: #fff;
+    line-height: 100rpx;
+    font-size: 32rpx;
+    border-radius: 15rpx;
+    overflow: hidden;
+}
+
+.Confirm-Menu .menu-agio{
+  overflow: hidden;
+}
+
+.Confirm-Menu .menu-l{
+    float: left;
+    width:150rpx;
+    text-align: left;
+}
+
+.Confirm-Menu .menu-r{
+    float:right;
+    width:500rpx;
+    text-align: right;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.Confirm-Menu .menu-mark{
+    overflow: hidden;
+    border-bottom:#eee 2rpx solid;
+}
+
+.Confirm-Menu .menu-area .area-main{
+    padding:30rpx;
+    background: #fff;
+    border-radius: 20rpx 20rpx 0 0;
+    position: absolute;
+    left:0;
+    right:0;
+    bottom:0;
+}
+
+.Confirm-Menu .menu-area .area-main text{
+    display: block;
+    text-align: center;
+    font-size: 36rpx;
+    border-bottom:#eee 2rpx solid;
+}
+
+.Confirm-Menu .menu-area .area-main label{
+    width:40rpx;
+    height:40rpx;
+    position: absolute;
+    top:40rpx;
+    right:40rpx;
+}
+
+.Confirm-Menu .menu-area .area-main textarea{
+    width:650rpx;
+    height:200rpx;
+    line-height: 60rpx;
+    margin: 50rpx 0;
+    padding:20rpx;
+    background: #fafafa;
+}
+
+.Confirm-Menu .menu-area .area-main textarea text{
+    line-height: 40rpx;
+    color:#999;
+    position: absolute;
+    right:20rpx;
+    bottom:20rpx;
+}
+
+.Confirm-Sure{
+    padding:30rpx;
+    background: #fff;
+    position: fixed;
+    left:0;
+    right:0;
+    bottom:0;
+}
+
+.Confirm-Sure text{
+    line-height: 80rpx;
+    font-size: 32rpx;
+}
+
+.Confirm-Sure text .sum{
+    margin:0 15rpx;
+    color:#fa474c;
+}
+
+::-webkit-scrollbar{
+  display: none
+}
+

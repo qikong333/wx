@@ -1,0 +1,93 @@
+.shopInfo {
+    display: flex;
+
+}
+
+.shopInfo .box1,
+.shopInfo .box2,
+.shopInfo .box3 {
+    float: left;
+    padding: 30rpx 0;
+
+}
+
+.shopInfo .box1 {
+    text-align: center;
+    width: 25%;
+    display: flex;
+    justify-content: center;
+}
+
+.shopInfo .box1 image {
+    float: left;
+    width: 120rpx;
+    height: 120rpx;
+    margin: 0 auto;
+}
+
+.shopInfo .box2 {
+    width: 50%;
+}
+
+.shopInfo .box2 image {
+    float: left;
+    width: 28rpx;
+    height: 34rpx;
+    padding: 5rpx 12rpx;
+
+
+}
+
+.shopInfo .box2 .text1 {
+    font-weight: bold;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    font-size: 30rpx;
+    width: 311rpx;
+    color: #2e3133;
+    float: left;
+
+}
+
+.shopInfo .box2 .text11 {
+    border-bottom: 2rpx dashed #2e3133;
+
+}
+
+.shopInfo .box2 .text2 {
+    width: 100%;
+    font-size: 22rpx;
+    color: #a2a6a8;
+    padding-left: 3rpx;
+    padding-left: 45rpx;
+    margin-top: 28rpx;
+
+
+}
+
+.shopInfo .box2 .text20 {
+    display: flex;
+}
+
+.shopInfo .box2 .text2 text {
+    display: flex;
+    width: 100%;
+
+}
+
+
+.shopInfo .box3 {
+    width: 25%;
+}
+
+.shopInfo .box3 .icon1 {
+    width: 36rpx;
+    height: 39rpx;
+}
+
+.shopInfo .box3 navigator {
+    float: right;
+    padding: 10rpx 25rpx;
+
+}

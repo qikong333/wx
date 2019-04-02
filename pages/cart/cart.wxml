@@ -1,0 +1,53 @@
+<!-- pages/cart/cart.wxml -->
+<view class='Cart'>
+  <!-- <scroll-view class='Cart-Info' scroll-y bindscrolltolower='bindlerNextPage' style="{{'height:' + height +'px'}}"> -->
+  <scroll-view class='Cart-Info' scroll-y style="{{'height:' + height +'px'}}">
+    <block wx:for="{{cart}}" wx:for-item="cart" wx:key="id">
+      <view class='cart-list'>
+        <icon class='list-icon' type="{{cart.check?'success':'circle'}}" color="{{cart.check?'#29aff6':'#ccc'}}" catchtap='catchCheckIn' data-index="{{index}}"></icon>
+        <image class='list-image' src='{{cart.image}}' binderror='bindImgLoadError' data-index='{{index}}'></image>
+        <image wx:if="{{!cart.stocknum>0}}" class="list-empty" src="../../images/empty.png"></image>
+        <text class='list-name'>{{cart.name}}</text>
+        <text class='list-size'>{{cart.ctitle}}</text>
+        <text class='list-price'>{{cart.price}}元</text>
+        <view class='list-num'>
+          <image class="sub {{cart.productQty>0? '':'hidden'}}" src='../../images/icon-sub.png' data-index="{{index}}" catchtap="catchSubNum"></image>
+          <text class="num {{cart.productQty>0? '':'hidden'}}">{{cart.productQty}}</text>
+          <image class='add' src='../../images/icon-add.png' data-index="{{index}}" catchtap="catchAddNum"></image>
+        </view>
+      </view>
+    </block>
+  </scroll-view>
+  <view class='bottom'>
+    <view class='bottom-check'>
+      <icon class='icon' type="{{checkAll?'success':'circle'}}" color="{{checkAll?'#29aff6':'#ccc'}}" catchtap='catchCheckAll'></icon>
+      <text class='text'>全选</text>
+    </view>
+    <view wx:if='{{!isEdit}}' class='bottom-cart'>
+      <view class='cart-sum'>
+        <text class='price'>
+          <text class='text'>合计:</text>
+          <text class='sum'>{{Sum}}</text>
+          <text class='text'>元</text>
+        </text>
+        <text wx:if='{{Sum<Tip}}' class="tip">
+          <text class='text'>满</text>
+          <text class='tip'>{{Tip}}</text>
+          <text class='text'>元起送，未满请自提</text>
+        </text>
+      </view>
+      <button class='cart-edit' bindtap="bindEdit">编辑</button>
+      <button class='cart-btn' disabled="{{Sum>0?false:true}}" bindtap="bindConfirm">结算</button>
+    </view>
+    <view wx:else class='bottom-delete'>
+      <view bindtap='bindDelete'>
+        <icon type='clear' size='32rpx'></icon>
+        <text>删除</text>
+      </view>
+      <view class='del-cancel' bindtap='bindCancel'>
+        <icon size='32rpx'></icon>
+        <text>取消</text>
+      </view>
+    </view>
+  </view>
+</view>

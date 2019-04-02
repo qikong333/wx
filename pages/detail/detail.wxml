@@ -1,0 +1,75 @@
+<!--pages/detail/detail.wxml-->
+<view class='Detail'>
+    <view class='Detail-Bill'>
+        <view class='bill-style'>
+            <rich-text>{{state[status-1]}}</rich-text>
+            <text>{{tips[status-1]}}</text>
+        </view>
+        <view class='bill-store' wx:if="{{Mode==1}}">
+            <rich-text>{{pickStore}}</rich-text>
+            <text>{{pickAddress}}</text>
+        </view>
+        <view class='bill-list'>
+            <view>购物明细</view>
+            <block wx:for="{{list}}" wx:for-item="list" wx:key="id">
+                <view class='list-con'>
+                    <text class='con-name'>{{list.name}}</text>
+                    <text class='con-num'>×{{list.num}}</text>
+                    <text class='con-sum'>{{list.sum}}元</text>
+                    <text class='con-size'>{{list.size}}</text>
+                </view>
+            </block>
+        </view>
+    </view>
+    <view class='Detail-Sum'>
+        <view class='detail-pro'>
+            <text>应付</text>
+            <rich-text><text>{{sum}}</text>元</rich-text>
+        </view>
+        <view class='detail-pro'>
+            <text>优惠券</text>
+            <rich-text><text>-{{coupon}}</text>元</rich-text>
+        </view>
+        <view class='detail-pro'>
+            <text>运费</text>
+            <rich-text><text>+{{tag}}</text>元</rich-text>
+        </view>
+        <view class='detail-pro'>
+            <text>实付</text>
+            <rich-text><text>{{total}}</text>元</rich-text>
+        </view>
+    </view>
+    <view class='Detail-Info' wx:for="{{order}}"  wx:for-item="order" wx:key="id">
+        <view class='detail-pro'>
+            <text>下单门店</text>
+            <rich-text>{{order.store}}</rich-text>
+        </view>
+        <view class='detail-pro'>
+            <text>订单类型</text>
+            <rich-text>{{order.state[Mode]}}</rich-text>
+        </view>
+        <view class='detail-pro' wx:if="{{Mode==0}}">
+            <text>配送地址</text>
+            <rich-text>{{order.address}}</rich-text>
+            <rich-text><text>{{order.name}}</text><text>{{order.phone}}</text></rich-text>
+        </view>
+        <view class='detail-pro'>
+            <text>备注</text>
+            <rich-text>{{order.mark}}</rich-text>
+        </view>
+        <view class='detail-pro'>
+            <text>下单时间</text>
+            <rich-text>{{order.time}}</rich-text>
+        </view>
+        <view class='detail-pro'>
+            <text>订单编号</text>
+            <rich-text>{{order.ID}}</rich-text>
+        </view>
+        <view class='detail-btn'>
+            <navigator bindtap='service'>联系客服</navigator>
+        </view>
+    </view>
+    <view class='Detail-Pay' wx:if="{{status==1}}">
+        <button class='button-b' bindtap='topay'>立即支付</button>
+    </view>
+</view>

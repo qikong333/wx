@@ -1,0 +1,80 @@
+.shopfooter {
+    border-top: 1rpx solid #dde0e4;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    height: 90rpx;
+    display: flex;
+    width: 100%;
+}
+
+.shopfooter .sf_l {
+    width: 66.66%;
+    float: left;
+    background: #fff;
+}
+
+.shopfooter .sf_r {
+    width: 33.33%;
+    float: left;
+    line-height: 90rpx;
+    color: #ffffff;
+    font-size: 34rpx;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+}
+
+.shopfooter .bg0 {
+    background: #dde0e4;
+    color: #a2a6a8;
+}
+
+.shopfooter .bg1 {
+    background: #00a3ff;
+    color: #ffffff;
+}
+
+.shopfooter .sf_l {
+    display: flex;
+    align-items: center;
+    padding-left: 30rpx;
+    position: relative;
+}
+
+.shopfooter .sf_l .sf_img {
+    margin-top: -40rpx;
+    width: 100rpx;
+    height: 100rpx;
+    float: left;
+    margin-right: 22rpx;
+}
+
+.shopfooter .sf_l .sf_text1 {
+    float: left;
+    color: #ff5733;
+    font-size: 30rpx;
+    /* margin-right: 9rpx; */
+
+}
+
+.shopfooter .sf_l .sf_text2 {
+    float: left;
+    color: #ff5733;
+    font-size: 48rpx;
+
+}
+
+
+.shopfooter .sf_l .sf_text3 {
+    position: absolute;
+    color: #fff;
+    background: #ff5733;
+    font-size: 24rpx;
+    text-align: center;
+    left: 90rpx;
+    bottom: 90rpx;
+    width: 36rpx;
+    height: 36rpx;
+    border-radius: 100rpx;
+}

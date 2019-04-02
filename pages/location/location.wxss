@@ -1,0 +1,204 @@
+/* pages/location/location.wxss */
+.Location {
+    padding: 0 30rpx;
+    background: #fff;
+    text-align: left;
+}
+
+.Location-Posi {
+    padding-top: 20rpx;
+    position: relative;
+}
+
+.Location-Posi>text {
+    display: block;
+    padding-top: 30rpx;
+    color: #999;
+    font-size: 30rpx;
+}
+
+.Location-Posi button {
+    width: 180rpx;
+    height: 70rpx;
+    line-height: 70rpx;
+    color: #fff;
+    background: #29aff6;
+    font-size: 30rpx;
+    border-radius: 50rpx;
+    position: absolute;
+    top: 35rpx;
+    right: 0;
+}
+
+.Location-Posi-info {
+    height: 160rpx;
+    position: relative;
+}
+
+.Location-Posi-info image {
+    float: left;
+    width: 36rpx;
+    height: 48rpx;
+    margin-top: 30rpx;
+    margin-right: 20rpx;
+}
+
+.Location-Posi-info text {
+    display: block;
+    line-height: 48rpx;
+    padding: 30rpx 0;
+    font-size: 30rpx;
+    font-weight: bold;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.Location-Posi-info rich-text {
+    width: 750rpx;
+    height: 60rpx;
+    line-height: 60rpx;
+    background: #F5F5F5;
+    color: #666;
+    text-indent: 30rpx;
+    font-size: 26rpx;
+    position: absolute;
+    left: -30rpx;
+    bottom: 0;
+}
+
+.Location2 {
+    background: #f4f6f9;
+}
+
+
+.Location-Near .store {
+    padding: 30rpx;
+    background: #fff;
+    position: relative;
+    line-height: 50rpx;
+    border-bottom: #eee 1rpx solid;
+    overflow: hidden;
+    margin-bottom: 30rpx;
+}
+
+.Location-Near .store .store-name {
+    max-width: 320rpx;
+    font-size: 34rpx;
+    float: left;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    color: #2e3133;
+}
+
+.Location-Near .store .store-state {
+    float: left;
+    line-height: 40rpx;
+    font-size: 24rpx;
+    margin: 5rpx 20rpx;
+    padding: 0 20rpx;
+    background: #ff5500;
+    color: #fff;
+    border-radius: 30rpx;
+}
+
+.Location-Near .store .store-distance {
+    font-size: 28rpx;
+    color: #29aff6;
+    float: right;
+}
+
+.Location-Near .store .store-address {
+    font-size: 28rpx;
+    color: #a2a6a8;
+    display: block;
+    float: left;
+    padding-left: 40rpx;
+}
+
+.Location2 .img {
+    position: absolute
+}
+
+.store .img1 {
+    left: 40rpx;
+    top: 90rpx;
+    width: 22rpx;
+    height: 29rpx;
+
+}
+
+.store .img2 {
+    width: 27rpx;
+    height: 20rpx;
+    left: 37rpx;
+    bottom: 45rpx;
+
+}
+
+.Location-Near .store .store-remarks {
+    font-size: 28rpx;
+    display: block;
+    float: left;
+    padding-left: 40rpx;
+    color: #a2a6a8;
+}
+
+.Location-Near rich-text {
+    display: block;
+    margin: 30rpx 0;
+    text-align: center;
+    font-size: 30rpx;
+}
+
+.Location-Near rich-text.active text:after {
+    content: '';
+    display: inline-block;
+    width: 20rpx;
+    height: 20rpx;
+    margin-left: 20rpx;
+    margin-right: 5rpx;
+    margin-bottom: 5rpx;
+    border-bottom: 4rpx solid #999;
+    border-right: 4rpx solid #999;
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+}
+
+
+.shopList {}
+
+.shopList .box {
+    height: 245rpx;
+}
+
+.shopList .box .box1 {}
+
+.shopList .box .box11 {
+    font-size: 34rpx;
+    color: #2e3133;
+    float: left;
+}
+
+.shopList .box .box12 {
+    float: left;
+    line-height: 40rpx;
+    font-size: 24rpx;
+    margin: 5rpx 20rpx;
+    padding: 0 20rpx;
+    background: #ff5500;
+    color: #fff;
+    border-radius: 30rpx;
+}
+
+.shopList .box .box2 {
+    font-size: 28rpx;
+    color: #29aff6;
+    float: left;
+}
+
+.shopList .box .box3 {
+    font-size: 28rpx;
+    color: #a2a6a8;
+}

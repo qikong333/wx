@@ -1,0 +1,52 @@
+<!--pages/edit/edit.wxml-->
+<view class='Edit'>
+    <view class='Edit-Info'>
+        <form>
+            <view class='edit-list'>
+                <text class='edit-tab'>联系人</text>
+                <rich-text>
+                    <input type='text' placeholder='姓名' value="{{NameValue}}"
+                    bindinput="bindnameInput"></input>
+                </rich-text>
+            </view>
+            <view class='edit-list'>
+                <text class='edit-tab'></text>
+                <rich-text>
+                    <text class="edit-opt {{index==callcurrent? 'active':''}}" wx:for="{{call}}" wx:key="id" data-index="{{index}}" catchtap='CallChange'>{{item}}</text>
+                </rich-text>
+            </view>
+            <view class='edit-list'>
+                <text class='edit-tab'>手机号</text>
+                <rich-text>
+                    <input type='number' placeholder='手机号码' maxlength='11' value="{{PhoneValue}}" bindinput="bindphoneInput"></input>
+                </rich-text>
+            </view>
+            <view class='edit-list'>
+                <text class='edit-tab'>地址</text>
+                <rich-text class='select' bindtap='GetArea'>
+                  <view class="address">{{AreaValue}}</view>
+                </rich-text>
+            </view>
+            <view class='edit-list'>
+                <text class='edit-tab'>详细信息</text>
+                <rich-text>
+                    <input type='text' placeholder='详细地址(如楼层/房号)' value="{{SiteValue}}" bindinput="bindsiteInput"></input>
+                </rich-text>
+            </view>
+            <view class='edit-list'>
+              <text class='edit-tab'>标签</text>
+              <rich-text>
+              <text class="edit-opt {{index==markcurrent? 'active':''}}" wx:for="{{mark}}" wx:key="id" data-index="{{index}}" catchtap='MarkChange'>{{item}}</text>      
+                </rich-text>
+            </view>
+        </form>
+    </view>
+    <view class='Edit-Save'>
+    <block wx:if='{{!HasAddress}}'>
+      <button class='button-b' disabled='{{disabled}}' bindtap='addaddress'>保存地址</button>
+    </block>
+    <block wx:else>
+      <button class='button-b' disabled='' bindtap='updateaddress'>保存地址</button>
+    </block>       
+    </view>
+</view>

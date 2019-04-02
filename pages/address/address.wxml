@@ -1,0 +1,37 @@
+<!--pages/address/address.wxml-->
+<view class='Address'>
+  <block wx:if="{{Address}}">
+    <scroll-view scroll-y='true' class='Address-Info'>
+      <block wx:for="{{list}}" wx:for-item="list" wx:key="id">
+        <view class='address-list'>
+          <view class='address-list-l' catchtap='SelectAddress' data-index="{{index}}">
+            <icon class='list-icon' type="{{index==ListCurrent?'success':'circle'}}"  color="{{index==ListCurrent?'#29aff6':'#ccc'}}"></icon>    
+            <view>
+              <text class='list-name'>{{list.name}}  {{call[list.sex-1]}}</text>  
+              <text class='list-phone'>{{list.phone}}</text>
+            </view>
+            <view>
+              <text class='list-mark'>{{mark[list.label-1]}}</text>
+              <text class='list-address'>{{list.areaname}}{{list.addressDetail}}</text>
+            </view>
+          </view>
+          <view class='address-list-r' bindtap='EditAddress' data-index="{{index}}">
+            <image src='../../images/edit.png'></image>
+          </view>
+        </view>
+      </block>
+    </scroll-view>
+    <view class='Address-Ybtn'>
+      <button class='button-b' bindtap='toedit'>新增地址</button>
+    </view>
+  </block>
+  <block wx:else>
+    <view class='Address-None'>
+      <image src='../../images/error.png'></image>
+      <text>亲，你还没有收货地址哦~</text>
+    </view>
+    <view class='Address-Nbtn'>
+      <button class='button-s' bindtap='toedit'>新增地址</button>
+    </view>
+  </block>
+</view>

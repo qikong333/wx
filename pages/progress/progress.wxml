@@ -1,0 +1,22 @@
+<!--pages/progress/progress.wxml-->
+<view class='Progress'>
+  <view class='Progress-Deta'>
+    <view class='deta-shop'>
+      <rich-text>{{shop.name}}</rich-text>
+      <text>{{shop.address}}</text>
+      <button catchtap='tocall'>联系商家</button>
+    </view>
+    <view class="deta-send {{sending?'':'hidden'}}">
+      <rich-text>{{send.name}}</rich-text>
+      <text>{{send.style}}</text>
+      <button>联系配送员</button>
+    </view>
+  </view>
+  <view class='Progress-Info'>
+    <text class='info-text'>订单跟踪</text>
+    <view class='info-list' wx:for="{{list}}" wx:for-item='list' wx:key='list' data-index="{{index}}">
+      <rich-text>{{list.mess}}</rich-text>
+      <text>{{list.time}}</text>
+    </view>
+  </view>
+</view>

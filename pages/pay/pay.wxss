@@ -1,0 +1,215 @@
+/* pages/pay/pay.wxss */
+
+.Pay {
+  background: #f5f5f5;
+}
+
+.Pay-Detail {
+  padding: 50rpx 0;
+  text-align: center;
+  background: #fff;
+  margin-bottom: 20rpx;
+}
+
+.Pay-Detail text {
+  font-size: 36rpx;
+}
+
+.Pay-Detail view {
+  margin: 30rpx 0;
+  font-size: 80rpx;
+  font-weight: bold;
+}
+
+.Pay-Detail rich-text {
+  font-size: 30rpx;
+  color: #999;
+}
+
+/* 仅微信支付 */
+.Pay-Method1{
+    padding:30rpx;
+    background: #fff;
+}
+
+.Pay-Method1>text{
+    font-size: 32rpx;
+}
+
+.Pay-Method1 .method-list1{
+    height: 60rpx;
+    padding:30rpx 0;
+    position: relative;
+}
+
+.Pay-Method1 .method-list1 image{
+    width:50rpx;
+    height:50rpx;
+    position: absolute;
+    left:0;
+    top:50%;
+    transform: translateY(-50%);
+}
+
+.Pay-Method1 .method-list1 text{
+    position: absolute;
+    left:70rpx;
+    top:50%;
+    transform: translateY(-50%);
+}
+
+.Pay-Method1 .method-list1 icon{
+    position: absolute;
+    right:0;
+    top:50%;
+    transform: translateY(-50%);
+}
+
+/* 有M卡支付方式 */
+.method{
+  height: 500rpx;
+}
+.Pay-Method {
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+}
+.Pay-Method > text {
+  padding: 30rpx;
+  font-size: 28rpx;
+  line-height: 36rpx;
+  border-bottom: 1rpx solid #dde0e4;
+}
+
+.Pay-Method .method-list {
+  display: flex;
+  align-items: center;
+  height: 87rpx;
+  padding: 0 30rpx;
+  border-bottom: 1rpx solid #dde0e4;
+  box-sizing: border-box;
+}
+
+.method-list .start {
+  width: 36rpx;
+  height: auto;
+  margin-right: 20rpx;
+}
+
+.method-list > text {
+  flex: 1;
+  font-size: 28rpx;
+}
+
+.method-list > icon {
+  width: 30rpx;
+  height: auto;
+}
+
+.method-list .end {
+  width: 16rpx;
+  height: auto;
+  margin: 0 7rpx;
+}
+
+.Pay-Method .method-item {
+  display: flex;
+  align-items: center;
+  height: 87rpx;
+  margin-left: 20rpx;
+  padding-left: 67rpx;
+  padding-right: 30rpx;
+  background: #fff;
+  border-bottom: 1rpx solid #dde0e4;
+  box-sizing: border-box;
+}
+
+.method-item .item_name, .method-item .item_balance {
+  font-size: 28rpx;
+}
+
+.active {
+  /* color: #333; */
+  opacity: 1;
+}
+
+.gray {
+  /* color: #ccc; */
+  opacity: .6;
+}
+
+.method-item .item_name {
+  width: 150rpx;
+}
+
+.method-item .item_balance {
+  flex: 1;
+}
+
+.method-item .item_balance > text {
+  color: #ff5600;
+  margin-left: 10rpx;
+}
+
+.pay_dark{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  background: rgba(0, 0, 0, .6);
+}
+
+.pay_password {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 85%;
+  background: #fff;
+  border-radius: 18rpx;
+  padding-top: 28rpx;
+  padding-bottom: 116rpx;
+}
+.pay_password > icon{
+  position: absolute;
+  top: 10rpx;
+  right: 10rpx;
+}
+.pay_title {
+  font-size: 30rpx;
+  line-height: 42rpx;
+}
+.pay_form{
+  height: 100rpx;
+  margin: 57rpx 0;
+  box-sizing: border-box;
+}
+
+.pay_input_content {
+  display: flex;
+  justify-content: space-around;
+}
+.pay_iptbox {
+  width: 98rpx;
+  height: 98rpx;
+  text-align: center;
+  border: 2rpx solid #ddd;
+}
+.pay_iptbox:not(:first-child) {
+  border-left: none;
+}
+
+.pay_ipt {
+  width: 0;
+  height: 0;
+}
+
+.Pay-Submit {
+  padding: 50rpx 0;
+  background: #fff;
+}

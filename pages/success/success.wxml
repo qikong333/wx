@@ -1,0 +1,18 @@
+<!-- pages/success/success.wxml -->
+<view class='Success'>
+    <view class='Success-Status'>
+        <icon type='success' size='80' color='#50c67c'></icon>
+    </view>
+    <view class='Success-Detail'>
+        <view>支付成功</view>
+        <rich-text>
+            本次订单获得
+            <text>{{point}}</text>
+            积分
+        </rich-text>
+    </view>
+    <view class='Success-Option'>
+        <navigator open-type='redirect' catchtap='todetail'>查看详情</navigator>
+        <navigator open-type='redirect' url='../index/index'>继续逛逛</navigator>
+    </view>
+</view>

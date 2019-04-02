@@ -1,0 +1,134 @@
+<!--pages/confirm/confirm.wxml-->
+<view class='Confirm'>
+  <view class='Confirm-Mode'>
+    <view class="mode-send  {{Mode==0? 'active':''}}" data-mode="0" catchtap='ModeChange'>送货上门</view>
+    <view class="mode-pick {{Mode==1?'active':''}}" data-mode="1" catchtap='ModeChange'>门店自提</view>
+  </view>
+  <!-- part1--address & tab -->
+  <view class="Confirm-info {{Mode==0?'send':'pick'}}">
+    <!-- 送货上门——地址信息 -->
+    <view class='info-send' wx:if="{{Mode==0}}" wx:for-item="send">
+      <block wx:if="{{hasAddress}}">
+        <navigator bindtap='toaddress'>
+          <image src='../../images/location-b.png'></image>
+          <text class='send-address'>{{Saddress}}</text>
+          <text class='send-name'>{{Sname}}</text>
+          <text class='send-phone'>{{Sphone}}</text>
+        </navigator>
+      </block>
+      <view wx:else>
+        <navigator bindtap='tonewaddress'>
+          <icon type='warn' size='20'></icon>
+          <text class='send-warn'>请完善收货信息</text>
+        </navigator>
+      </view>
+    </view>
+    <!-- 门店自提——用户信息 -->
+    <view class='info-pick' wx:else>
+      <view class='pick-store'>
+        <text class='pick-name'>{{Pshop}}</text>
+        <text class='pick-address'>{{Paddress}}</text>
+      </view>
+      <view class='pick-deta' bindtap='toaddress'>
+        <form>
+          <text>提货人</text>
+          <label>{{Pname}}</label>
+        </form>
+        <form>
+          <text>联系电话</text>
+          <label>{{Pphone}}</label>
+        </form>
+      </view>
+      <view class='pick-mess'>
+        <label>
+          <icon type='warn' size='16'></icon>
+        </label>
+        <!-- <text>请在今天 {{opentime}}—{{closetime}} 间到门店提货</text> -->
+        <text>请在今天 {{opentime}} 间到门店提货</text>
+      </view>
+    </view>
+  </view>
+
+  <view class='Confirm-List'>
+    <view class="list-tip {{Mode==0? '':'hidden'}}">{{Pshop}}</view>
+    <!-- 商品列表 -->
+    <scroll-view scroll-y scroll-top='0' class='list-con'>
+      <view wx:for="{{list}}" wx:for-item="list" wx:key="id">
+        <image class='con-image' src='{{list.image}}'></image>
+        <text class='con-name'>{{list.name}}</text>
+        <text class='con-num'>×{{list.productQty}}</text>
+        <text class='con-sum'>{{list.price}}元</text>
+        <text class='con-size'>{{list.ctitle}}</text>
+      </view>
+    </scroll-view>
+    <view class='list-sum'>
+      <rich-text class='fl'>商品金额：</rich-text>
+      <rich-text class='fr bd'>合计:
+        <text>{{Sum}}</text>元</rich-text>
+    </view>
+    <!-- 送货上门时显示，否则隐藏 -->
+    <view class="list-tag {{Mode==0?'':'hidden'}}">
+      <rich-text class='fl'>运费：
+        <label catchtap='TipOpen'>
+          <icon type='warn' size='16'></icon>
+        </label>
+      </rich-text>
+      <rich-text wx:if="{{!showTag}}" class='fr bd'>不支持配送</rich-text>
+      <rich-text wx:else class='fr bd'>+
+        <text>{{tag}}</text>元</rich-text>
+    </view>
+    <!-- 点击运费旁的【红色叹号】出现的运费规则提示 -->
+    <view class="list-pop pop-bg {{Show?'':'hidden'}}">
+      <view>
+        <form>
+          <label>
+            <rich-text>配送费 ¥{{tag}}</rich-text>
+            <text>送货距离</text>
+            <text class='blue'>{{ruleDistance}}km</text>
+            <text>货物重量</text>
+            <text class='blue'>{{weight}}kg</text>
+          </label>
+          <label>
+            <rich-text>配送规则说明</rich-text>
+            <text>1.{{Readme.fir}}</text>
+            <text>2.{{Readme.sec}}</text>
+            <text>3.{{Readme.thr}}</text>
+          </label>
+        </form>
+        <button catchtap='TipClose'>我知道了</button>
+      </view>
+    </view>
+  </view>
+
+  <view class='Confirm-Menu'>
+    <view class='menu-mark'>
+      <text class='menu-l'>备注</text>
+      <text class='menu-r arrow' catchtap='PopOpen'>{{mark}}</text>
+    </view>
+    <view class='menu-agio'>
+      <text class='menu-l'>优惠券</text>
+      <text class='menu-r arrow' bindtap='tocoupon'>
+        <!-- <text class="pink {{coupon.id?'':'hidden'}}">{{coupon.amount}}</text>
+        <text class='grey'>{{!coupon.id?'未使用优惠券':coupon.type==0?'元':'折'}}</text> -->
+        <text class='grey'>{{couponText}}</text>
+      </text>
+    </view>
+    <!-- 点击【备注】出现 -->
+    <view class="menu-area pop-bg {{show==1? '':'hidden'}}">
+      <form wx:if="{{show==1}}" class='area-main' bindsubmit="PopSubmit">
+        <text>添加备注</text>
+        <label catchtap='PopClose'>
+          <icon type="clear" size="20"></icon>
+        </label>
+        <textarea placeholder='口味、偏好等要求' fixed='true' maxlength="{{length}}" bindinput="WordLimit" bindblur="TextAreaBlur" value="{{areatext}}">
+          <text>{{word}}/{{length}}</text>
+        </textarea>
+        <button class='button-b' formType='submit'>确认</button>
+      </form>
+    </view>
+  </view>
+  <view class='Confirm-Sure'>
+    <text class='total-sum'>应付:<text class='sum'>{{Total}}</text>元</text>
+    <button class='button-s fr' disabled='{{disabled}}' bindtap='toorder'>提交订单</button>
+  </view>
+</view>
